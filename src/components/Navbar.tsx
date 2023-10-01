@@ -13,7 +13,7 @@ const Navbar = () => {
 					<span className='span-blink-reversed absolute text-secondary-200'>
 						in
 					</span>
-					<span className='ml-8'>spiring</span>
+					<span className='ml-9'>spiring</span>
 				</h3>
 			</Link>
 			<Hamburger />

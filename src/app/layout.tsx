@@ -17,7 +17,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<AuthProvider>
-				<body className='bg-primary-100 text-light-100'>
+				<body className='bg-primary-100 text-light-100 font-plex'>
 					<Wrapper>
 						<Navbar />
 						<main>{children}</main>

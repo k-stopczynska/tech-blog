@@ -28,30 +28,40 @@ const Hamburger = () => {
 			</button>
 			{isOpen && (
 				<div
-					className={`w-full h-full flex flex-col gap-12 items-center justify-center bg-primary-100 absolute top-24 left-0 text-4xl z-50 ${navClass}`}
+					className={`w-full md:w-[30%] h-[85%] flex flex-col gap-4 items-center justify-center bg-primary-100 absolute top-24 right-0 text-2xl z-50 ${navClass}`}
 				>
 					<Link href='/blog' className='link '>
-						Blog
+						blog
 					</Link>
 					<Link href='/about' className='link'>
-						O mnie
+						about
 					</Link>
 					<Link href='/contact' className='link'>
-						Kontakt
+						contact
 					</Link>
 					{status !== 'authenticated' && (
-						<button onClick={() => signIn('google')} type='button'>
-							zaloguj
+						<button
+							onClick={() => signIn('google')}
+							type='button'
+							className='link'
+						>
+							sign in
 						</button>
 					)}
 					{status === 'authenticated' && (
 						<>
 							{data?.user?.name === 'Klaudia Stopczyńska' && (
-								<Link href='/write'>Napisz</Link>
+								<Link href='/write' className='link'>
+									write
+								</Link>
 							)}
 
-							<button onClick={() => signOut()} type='button'>
-								wyloguj
+							<button
+								onClick={() => signOut()}
+								type='button'
+								className='link'
+							>
+							sign out
 							</button>
 						</>
 					)}
