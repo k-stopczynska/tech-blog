@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Hamburger from './Hamburger';
 
 const Navbar = () => {
 	return (
@@ -15,7 +16,7 @@ const Navbar = () => {
 					<span className='ml-8'>spiring</span>
 				</h3>
 			</Link>
-			<div>hamburger</div>
+			<Hamburger />
 		</nav>
 	);
 };
