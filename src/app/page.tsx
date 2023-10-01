@@ -1,9 +1,9 @@
-import CardList from '@/components/CardList'
+import CardList from '@/components/CardList';
 
 export default function Home() {
-  return (
-    <main>
-      <CardList/>
-    </main>
-  )
+	return (
+		<>
+			<CardList />
+		</>
+	);
 }

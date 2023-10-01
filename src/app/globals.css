@@ -2,3 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes blink-reversed {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.span-blink {
+	animation: blink 8s linear infinite;
+}
+
+.span-blink-reversed {
+	animation: blink-reversed 8s linear infinite;
+}
