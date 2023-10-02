@@ -39,3 +39,13 @@
 .span-blink-reversed {
 	animation: blink-reversed 8s linear infinite;
 }
+
+.gradient {
+	background: rgb(254,93,159);
+	background: linear-gradient(201deg, rgba(254,93,159,1) 0%, rgba(1,23,47,0.9612219887955182) 32%, rgba(114,90,193,1) 160%);
+}
+
+.shadow {
+	box-shadow: #31336D 10px 10px 0px -1px, #f5e6e8 10px 10px;
+	transition: all 0.6s ease-in-out;
+}
