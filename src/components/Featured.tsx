@@ -4,7 +4,7 @@ import React from 'react';
 
 const Featured = () => {
 	return (
-		<article className='gradient px-6 py-10 h-full rounded flex flex-row flex-1 gap-6'>
+		<article className='gradient px-6 py-10 h-full rounded flex flex-col-reverse lg:flex-row flex-1 gap-6'>
 			<div className='flex flex-col leading-7 flex-1 text-justify'>
 				<p>
 					Id semper risus in hendrerit gravida. Eget nullam non nisi
@@ -21,12 +21,12 @@ const Featured = () => {
 				</p>
 				<Link
 					href='/'
-					className='max-w-[35%] rounded border py-3 px-6 mt-5 hover:text-secondary-100 hover:border-secondary-100 focus:text-secondary-100 focus:border-secondary-100 transition duration-600'
+					className='max-w-[35%] rounded border py-3 px-6 mt-4 hover:text-secondary-100 hover:border-secondary-100 focus:text-secondary-100 focus:border-secondary-100 transition duration-600'
 				>
 					Read more
 				</Link>
 			</div>
-			<div className='flex-1 flex flex-col justify-between'>
+			<div className='flex-1 flex flex-col justify-between gap-4 items-center lg:gap-0'>
 				<h2 className='text-4xl font-semibold'>
 					The one about new beginnings...
 				</h2>
