@@ -21,7 +21,7 @@ const Featured = () => {
 				</p>
 				<Link
 					href='/'
-					className='max-w-[35%] rounded border py-3 px-6 mt-4 hover:text-secondary-100 hover:border-secondary-100 focus:text-secondary-100 focus:border-secondary-100 transition duration-600'
+					className='shadow max-w-[35%] rounded py-3 px-6 mt-4'
 				>
 					Read more
 				</Link>
@@ -34,7 +34,7 @@ const Featured = () => {
 				<Image
 					src='/coder.jpg'
 					alt='coder ghost'
-					className='invert'
+					className='invert rounded'
 					width={400}
 					height={100}
 				/>
