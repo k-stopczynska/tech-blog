@@ -72,18 +72,35 @@
 		5px 0 10px 2px rgba(254, 93, 159, 1);
 }
 
+.container {
+	position: relative;
+	width: 1100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 10px;
+	cursor: pointer
+}
+
 .card {
 	--angle: 0deg;
 	border-radius: 4px;
-	padding: 4rem;
+	padding: 1rem;
+	position: relative;
+	max-width: 300px;
+	height: 215px;
+	display: flex;
+	flex-direction: column;
+	transition: 0.3s ease-in-out;
 	border: 5px solid transparent;
-	box-shadow: inset 0 100vw #01172f;
+	box-shadow: inset 0 100vw #01172f, 0 5px 20px #725ac1;
 	background-origin: border-box;
 	background-image: linear-gradient(
-			var(--angle),
-			rgba(114, 90, 193, 1),
-			rgba(254, 93, 159, 1)
-		);
+		var(--angle),
+		rgba(114, 90, 193, 1),
+		rgba(254, 93, 159, 1)
+	);
 	animation: 5s rotate linear infinite;
 }
 
@@ -97,4 +114,57 @@
 	syntax: '<angle>';
 	initial-value: 0deg;
 	inherits: false;
+}
+
+.card:hover {
+	height: 320px;
+}
+
+.image {
+	position: absolute;
+	width: 160px;
+	height: 160px;
+	background-image: linear-gradient(
+		var(--angle),
+		rgba(114, 90, 193, 1),
+		rgba(254, 93, 159, 1)
+	);
+	animation: 5s rotate linear infinite;
+	top: -10%;
+	left: 60px;
+	box-shadow: 0 5px 20px #725ac1;
+	border-radius: 4px;
+	z-index: 10;
+	border: 5px solid transparent;
+}
+
+.title {
+	position: relative;
+	text-align: center;
+	top: 150px;
+	transition: 0.3s ease-in-out;
+}
+
+.card:hover .title {
+	visibility: hidden;
+	opacity: 0;
+	transition-delay: 0.2s;
+}
+
+.content {
+	position: relative;
+	top: 80px;
+	padding: 10px 15px;
+	color: #f5e6e8;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.3s ease-in-out;
+	text-align: justify;
+}
+
+.card:hover .content {
+	margin-top: 30px;
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0.2s;
 }
