@@ -15,16 +15,6 @@ const cards1 = [
 	{ title: 'Card 7' },
 ];
 
-const cards2 = [
-	{ title: 'Card 8' },
-	{ title: 'Card 9' },
-	{ title: 'Card 10' },
-	{ title: 'Card 11' },
-	{ title: 'Card 12' },
-	{ title: 'Card 13' },
-	{ title: 'Card 14' },
-];
-
 const CardList = () => {
 	const sectionRef = useRef(null);
 	const triggerRef = useRef(null);
@@ -38,14 +28,13 @@ const CardList = () => {
 				translateX: 0,
 			},
 			{
-				translateX: '-1300px',
-				// translateY: '-500px',
+				translateX: '-1500px',
 				ease: 'none',
 				duration: 1,
 				scrollTrigger: {
 					trigger: triggerRef.current,
 					start: '-180 top',
-					end: '1300 top',
+					end: '1500 top',
 					scrub: 0.6,
 					pin: true,
 				},

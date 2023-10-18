@@ -9,14 +9,16 @@ const categories = [
 	{ title: 'materials', img: '/materials.png', href: '/' },
 	{ title: 'lifestyle', img: '/lifestyle.png', href: '/' },
 	{ title: 'games', img: '/console.png', href: '/' },
-	{ title: 'hobbies', img: '/hobbies.png', href: '/' }
+	{ title: 'hobbies', img: '/hobbies.png', href: '/' },
 ];
 
 const Categories = () => {
 	return (
-        <aside className='flex flex-col h-full px-4 py-2 border rounded'>
-            {categories.map(category => <Category {...category} key={category.title} /> )}
-        </aside>
+		<aside className='flex w-full justify-between lg:w-fit lg:flex-col h-full lg:px-4 py-2 border rounded'>
+			{categories.map((category) => (
+				<Category {...category} key={category.title} />
+			))}
+		</aside>
 	);
 };
 
