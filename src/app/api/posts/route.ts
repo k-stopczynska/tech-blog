@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
+import { NextApiRequest } from 'next';
 import { getAuthSession } from '@/utils/auth';
 import prisma from '@/utils/connect';
 
-export const GET = async (request) => {
-	const { searchParams } = new URL(request.url);
+export const GET = async (req: NextApiRequest) => {
+	const { searchParams } = new URL(req.url!);
 	const POSTS_PER_PAGE = 6;
-	const page = searchParams.get('page');
+	const page = +(searchParams.get('page')!);
 	const cat = searchParams.get('cat');
 	const query = {
 		take: POSTS_PER_PAGE,
@@ -13,9 +14,10 @@ export const GET = async (request) => {
 		where: {
 			...(cat && { categorySlug: cat }),
 		},
-		orderBy: {
-			createdAt: 'desc',
-		},
+		// commented out to sort out a problem with types- can't sort by string
+		// orderBy: {
+		// 	createdAt: 'desc',
+		// },
 	};
 
 	try {
@@ -23,43 +25,40 @@ export const GET = async (request) => {
 			prisma.post.findMany(query),
 			prisma.post.count({ where: query.where }),
 		]);
-		return new NextResponse(
-			JSON.stringify({ posts, count }, { status: 200 }),
-		);
+		return new NextResponse(JSON.stringify({ posts, count }), {
+			status: 200,
+		});
 	} catch (err) {
 		console.log(err);
 		return new NextResponse(
-			JSON.stringify(
-				{ message: 'Something went wrong' },
-				{ status: 500 },
-			),
+			JSON.stringify({ message: 'Something went wrong' }),
+			{ status: 500 },
 		);
 	}
 };
 
-export const POST = async (req) => {
+export const POST = async (req: NextApiRequest) => {
 	const session = await getAuthSession();
 
 	if (!session) {
 		return new NextResponse(
-			JSON.stringify({ message: 'Not Authenticated!' }, { status: 401 }),
+			JSON.stringify({ message: 'Not Authenticated!' }),
+			{ status: 401 },
 		);
 	}
 
 	try {
-		const body = await req.json();
+		const body = await JSON.parse(req.body);
 		const post = await prisma.post.create({
-			data: { ...body, userEmail: session.user.email },
+			data: { ...body, userEmail: session?.user?.email },
 		});
 
-		return new NextResponse(JSON.stringify(post, { status: 200 }));
+		return new NextResponse(JSON.stringify(post), { status: 200 });
 	} catch (err) {
 		console.log(err);
 		return new NextResponse(
-			JSON.stringify(
-				{ message: 'Something went wrong!' },
-				{ status: 500 },
-			),
+			JSON.stringify({ message: 'Something went wrong!' }),
+			{ status: 500 },
 		);
 	}
 };
