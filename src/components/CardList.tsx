@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Card from '@/UI/Card';
 
-const cards = [
+const cards1 = [
 	{ title: 'Card 1' },
 	{ title: 'Card 2' },
 	{ title: 'Card 3' },
@@ -13,6 +13,16 @@ const cards = [
 	{ title: 'Card 5' },
 	{ title: 'Card 6' },
 	{ title: 'Card 7' },
+];
+
+const cards2 = [
+	{ title: 'Card 8' },
+	{ title: 'Card 9' },
+	{ title: 'Card 10' },
+	{ title: 'Card 11' },
+	{ title: 'Card 12' },
+	{ title: 'Card 13' },
+	{ title: 'Card 14' },
 ];
 
 const CardList = () => {
@@ -29,12 +39,12 @@ const CardList = () => {
 			},
 			{
 				translateX: '-1300px',
-				translateY: '-500px',
+				// translateY: '-500px',
 				ease: 'none',
 				duration: 1,
 				scrollTrigger: {
 					trigger: triggerRef.current,
-					start: 'top top',
+					start: '-180 top',
 					end: '1300 top',
 					scrub: 0.6,
 					pin: true,
@@ -48,13 +58,13 @@ const CardList = () => {
 	}, []);
 
 	return (
-		<section className='overflow-hidden'>
+		<section className='overflow-hidden py-5 border-y-2 border-secondary-200'>
 			<div ref={triggerRef}>
 				<div
 					ref={sectionRef}
-					className='h-full w-[2300px] flex relative gap-[1rem] px-[2rem] rotate-[30deg] translate-y-[200%]'
+					className='h-full w-[2300px] flex relative gap-[1rem] px-[2rem]'
 				>
-					{cards.map((card) => (
+					{cards1.map((card) => (
 						<Card {...card} />
 					))}
 				</div>
