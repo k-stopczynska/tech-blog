@@ -4,18 +4,24 @@ import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Card from '@/UI/Card';
+import Pagination from '@/components/Pagination';
 
-const cards1 = [
-	{ title: 'Card 1' },
-	{ title: 'Card 2' },
-	{ title: 'Card 3' },
-	{ title: 'Card 4' },
-	{ title: 'Card 5' },
-	{ title: 'Card 6' },
-	{ title: 'Card 7' },
-];
+const getPosts = async (page: any, category: any) => {
+	const response = await fetch(
+		`https://localhost:3000/api/posts?page=${page}&cat=${category || ''}`,
+	);
+	if (!response.ok) {
+		throw new Error('Loading posts failed...');
+	}
+	return response.json();
+};
 
-const CardList = () => {
+const CardList = async ({ page, category }: any) => {
+	const POSTS_PER_PAGE = 6;
+	const { posts, count } = await getPosts(page, category);
+	const hasPrev = POSTS_PER_PAGE * (page - 1) > 0;
+	const hasNext = POSTS_PER_PAGE * (page - 1) + POSTS_PER_PAGE < count;
+
 	const sectionRef = useRef(null);
 	const triggerRef = useRef(null);
 
@@ -47,17 +53,19 @@ const CardList = () => {
 	}, []);
 
 	return (
-		<section className='overflow-hidden py-5 border-y-2 border-secondary-200'>
+		<section className='overflow-hidden py-10 border-y-2 border-secondary-200'>
+			<h3 className='text-lg md:text-2xl font-bold mb-4'>Posts</h3>
 			<div ref={triggerRef}>
 				<div
 					ref={sectionRef}
 					className='h-full w-[2300px] flex relative gap-[1rem] px-[2rem]'
 				>
-					{cards1.map((card) => (
-						<Card {...card} />
+					{posts?.map((card: any) => (
+						<Card {...card} key={card._id} />
 					))}
 				</div>
 			</div>
+			<Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
 		</section>
 	);
 };

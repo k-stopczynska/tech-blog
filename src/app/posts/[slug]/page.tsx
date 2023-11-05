@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-// import Author from '@/UI/Author';
-// import Comments from '@/components/Comments';
+import Author from '@/UI/Author';
+import Comments from '@/components/Comments';
 
-const getPost = async (slug) => {
+const getPost = async (slug: string) => {
 	const response = await fetch(`https://localhost:3000/api/posts/${slug}`);
 	if (!response.ok) {
 		throw new Error('fetching this post failed, try again');
@@ -36,7 +36,7 @@ export default async function PostPage({ params }: any) {
 					<Author
 						author={user.name}
 						timestamp={createdAt.split('T')[0]}
-						image={categoryImages[categorySlug]}
+						image={categoryImages['soft']}
 					/>
 				</div>
 				<div className='lg:flex-1 aspect-auto w-full min-h-[300px] relative mt-10 lg:mt-0'>

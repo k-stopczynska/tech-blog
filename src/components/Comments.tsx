@@ -2,7 +2,7 @@
 
 import React, { Suspense } from 'react';
 import useSWR from 'swr';
-import CommentInput from '../UI/Commentinput';
+import CommentInput from '../UI/CommentInput';
 import Comment from '../UI/Comment';
 // import Loading from '@/app/loading';
 
