@@ -1,26 +1,45 @@
 'use client';
 
 import React, { useRef, useEffect } from 'react';
+import useSWR from 'swr';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Card from '@/UI/Card';
 import Pagination from '@/components/Pagination';
 
-const getPosts = async (page: any, category: any) => {
-	const response = await fetch(
-		`https://localhost:3000/api/posts?page=${page}&cat=${category || ''}`,
-	);
-	if (!response.ok) {
-		throw new Error('Loading posts failed...');
+const fetcher = async (url: string) => {
+	const res = await fetch(url);
+	const data = await res.json();
+	console.log(data)
+	if (!res.ok) {
+		const error = new Error(data.message);
+		throw error;
 	}
-	return response.json();
+	return data;
 };
 
-const CardList = async ({ page, category }: any) => {
-	const POSTS_PER_PAGE = 6;
-	const { posts, count } = await getPosts(page, category);
+// const getPosts = async (page: any, category: any) => {
+// 	const response = await fetch(
+// 		`https://localhost:3000/api/posts?page=${page}&cat=${category || ''}`,
+// 	);
+// 	if (!response.ok) {
+// 		throw new Error('Loading posts failed...');
+// 	}
+// 	return response.json();
+// };
+
+const CardList = ({ page, category }: any) => {
+
+	const { data, mutate, isLoading } = useSWR(
+		`http://localhost:3000/api/posts?page=${page}&cat=${category || ''}`,
+		fetcher,
+	);
+
+	const POSTS_PER_PAGE = 7;
+	// const { posts, count } = await getPosts(page, category);
+	
 	const hasPrev = POSTS_PER_PAGE * (page - 1) > 0;
-	const hasNext = POSTS_PER_PAGE * (page - 1) + POSTS_PER_PAGE < count;
+	const hasNext = POSTS_PER_PAGE * (page - 1) + POSTS_PER_PAGE < data?.count;
 
 	const sectionRef = useRef(null);
 	const triggerRef = useRef(null);
@@ -60,7 +79,7 @@ const CardList = async ({ page, category }: any) => {
 					ref={sectionRef}
 					className='h-full w-[2300px] flex relative gap-[1rem] px-[2rem]'
 				>
-					{posts?.map((card: any) => (
+					{data?.posts?.map((card: any) => (
 						<Card {...card} key={card._id} />
 					))}
 				</div>

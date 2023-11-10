@@ -38,8 +38,6 @@ export const POST = async (req: NextApiRequest) => {
 		const comment = await prisma.comment.create({
 			data: { ...body, userEmail: session?.user?.email },
 		});
-
-		console.log(comment, 'comment');
 		return new NextResponse(JSON.stringify(comment), { status: 200 });
 	} catch (err) {
 		return new NextResponse(

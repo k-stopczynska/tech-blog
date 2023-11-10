@@ -19,11 +19,11 @@ const fetcher = async (url: string) => {
 
 const Comments = ({ postSlug }: any) => {
 	const { data, mutate, isLoading } = useSWR(
-		`https://localhost:3000/api/comments?postSlug=${postSlug}`,
+		`http://localhost:3000/api/comments?postSlug=${postSlug}`,
 		fetcher,
 	);
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async (e: any) => {
 		e.preventDefault();
 		await fetch('/api/comments', {
 			method: 'POST',

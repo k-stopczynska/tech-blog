@@ -5,8 +5,10 @@ import prisma from '@/utils/connect';
 
 export const GET = async (req: NextApiRequest) => {
 	const { searchParams } = new URL(req.url!);
-	const POSTS_PER_PAGE = 6;
-	const page = +(searchParams.get('page')!);
+	const POSTS_PER_PAGE = 7;
+	// const page = +(searchParams.get('page'));
+	// check why page is undefined
+	const page = 1
 	const cat = searchParams.get('cat');
 	const query = {
 		take: POSTS_PER_PAGE,
@@ -14,7 +16,6 @@ export const GET = async (req: NextApiRequest) => {
 		where: {
 			...(cat && { categorySlug: cat }),
 		},
-		// commented out to sort out a problem with types- can't sort by string
 		// orderBy: {
 		// 	createdAt: 'desc',
 		// },
