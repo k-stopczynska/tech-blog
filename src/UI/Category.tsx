@@ -5,15 +5,13 @@ import Image from 'next/image';
 const Category = ({
 	title,
 	img,
-	href,
 }: {
 	title: string;
 	img: string;
-	href: string;
 }) => {
 	return (
 		<Link
-			href={href}
+			href={`/blog?category=${title}`}
 			className='flex flex-col items-center gap-1 py-2 border-b hover:font-semibold transition duration-600'
 		>
 			<div className='semi-shadow bg-light-100 rounded '>
