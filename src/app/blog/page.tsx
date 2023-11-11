@@ -1,5 +1,5 @@
 import React from 'react';
-import CardList from '@/components/CardListScroller';
+import CardListSwiper from '@/components/CardListSwiper';
 import { SearchParamsType } from '@/types';
 
 export default function BlogPage({
@@ -15,7 +15,7 @@ export default function BlogPage({
 			<h1 className='text-4xl font-bold text-center mt-20 mb-10 capitalize'>
 				{category.title}
 			</h1>
-			<CardList page={page} category={category} />
+			<CardListSwiper page={page} category={category} />
 		</div>
 	);
 }
