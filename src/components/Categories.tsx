@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Category from '@/UI/Category';
+import { CategoryType } from '@/types';
 
 const getCategories = async () => {
 	const response = await fetch(
@@ -12,12 +13,13 @@ const getCategories = async () => {
 	return response.json();
 };
 
+
+
 const Categories = async() => {
 	const categories = await getCategories();
-	console.log(categories)
 	return (
 		<aside className='flex w-full justify-between lg:w-fit lg:flex-col h-full lg:px-4 py-2 border rounded'>
-			{categories?.map((category: any) => (
+			{categories?.map((category: CategoryType) => (
 				<Category {...category} key={category.title} />
 			))}
 		</aside>

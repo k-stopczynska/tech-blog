@@ -10,23 +10,12 @@ import Pagination from '@/components/Pagination';
 const fetcher = async (url: string) => {
 	const res = await fetch(url);
 	const data = await res.json();
-	console.log(data)
 	if (!res.ok) {
 		const error = new Error(data.message);
 		throw error;
 	}
 	return data;
 };
-
-// const getPosts = async (page: any, category: any) => {
-// 	const response = await fetch(
-// 		`https://localhost:3000/api/posts?page=${page}&cat=${category || ''}`,
-// 	);
-// 	if (!response.ok) {
-// 		throw new Error('Loading posts failed...');
-// 	}
-// 	return response.json();
-// };
 
 const CardList = ({ page, category }: any) => {
 
@@ -36,8 +25,6 @@ const CardList = ({ page, category }: any) => {
 	);
 
 	const POSTS_PER_PAGE = 7;
-	// const { posts, count } = await getPosts(page, category);
-	
 	const hasPrev = POSTS_PER_PAGE * (page - 1) > 0;
 	const hasNext = POSTS_PER_PAGE * (page - 1) + POSTS_PER_PAGE < data?.count;
 

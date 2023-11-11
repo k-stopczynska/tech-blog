@@ -3,12 +3,26 @@ import Image from 'next/image';
 import Author from '@/UI/Author';
 import Comments from '@/components/Comments';
 
-const getPost = async (slug: string) => {
+{
+	/* <Type>(arg: Type): Type */
+}
+// const getPost: (slug: string) => Promise<any>;
+
+const getPost = async (slug: string): Promise<PostPageProps> => {
 	const response = await fetch(`http://localhost:3000/api/posts/${slug}`);
 	if (!response.ok) {
 		throw new Error('fetching this post failed, try again');
 	}
 	return response.json();
+};
+
+type PostPageProps = {
+	title: string;
+	desc: string;
+	createdAt: string;
+	user: { name: string; email: string; img: string };
+	img: string;
+	categorySlug: string;
 };
 
 export default async function PostPage({ params }: any) {
@@ -36,7 +50,7 @@ export default async function PostPage({ params }: any) {
 					<Author
 						author={user.name}
 						timestamp={createdAt.split('T')[0]}
-						image={categoryImages['soft']}
+						image={categoryImages[categorySlug]}
 					/>
 				</div>
 				<div className='lg:flex-1 aspect-auto w-full min-h-[300px] relative mt-10 lg:mt-0'>
