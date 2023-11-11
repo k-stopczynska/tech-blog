@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { CardType } from '@/types';
 
-const Card = ({ title, img, createdAt, categorySlug, slug, key }: any) => {
+const Card = ({ title, img, createdAt, categorySlug, slug, key }: CardType) => {
 	return (
 		<Link href={`/posts/${slug}`} className='container' key={key}>
 			<section className='card'>

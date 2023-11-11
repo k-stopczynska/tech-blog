@@ -6,7 +6,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Card from '@/UI/Card';
 import Pagination from '@/components/Pagination';
-import { SearchParamsType } from '@/types';
+import { SearchParamsType, CardType } from '@/types';
 
 type UpdatedSearchParamsType = {
 	[K in keyof SearchParamsType]: K extends 'page'
@@ -72,7 +72,7 @@ const CardList = ({ page, category }: UpdatedSearchParamsType) => {
 					ref={sectionRef}
 					className='h-full w-[2300px] flex relative gap-[1rem] px-[2rem]'
 				>
-					{data?.posts?.map((card: any) => (
+					{data?.posts?.map((card: CardType) => (
 						<Card {...card} key={card._id} />
 					))}
 				</div>
