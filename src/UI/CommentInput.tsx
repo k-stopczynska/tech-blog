@@ -1,9 +1,9 @@
 'use client';
-import React from 'react';
+import React, { FormEvent} from 'react';
 import { useSession } from 'next-auth/react';
 import Button from './Button';
 
-const CommentInput = ({ handleSubmit }: any) => {
+const CommentInput = ({ handleSubmit }: { handleSubmit: (e: FormEvent<HTMLFormElement>) => Promise<void> }) => {
 	const { status } = useSession();
 
 	return (

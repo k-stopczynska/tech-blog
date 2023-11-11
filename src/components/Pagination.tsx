@@ -3,7 +3,7 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import Button from '../UI/Button';
 
-const Pagination = ({ page, hasPrev, hasNext }: any) => {
+const Pagination = ({ page, hasPrev, hasNext }: {page: number, hasPrev: boolean, hasNext: boolean}) => {
 	const router = useRouter();
 	const handlePrev = () => {
 		router.push(`?page=${page - 1}`);
