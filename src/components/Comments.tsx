@@ -1,9 +1,10 @@
 'use client';
 
-import React, { Suspense } from 'react';
+import React, { Suspense, FormEvent } from 'react';
 import useSWR from 'swr';
 import CommentInput from '../UI/CommentInput';
 import Comment from '../UI/Comment';
+import { CommentType } from '@/types';
 // import Loading from '@/app/loading';
 
 const fetcher = async (url: string) => {
@@ -17,20 +18,21 @@ const fetcher = async (url: string) => {
 	return data;
 };
 
-const Comments = ({ postSlug }: any) => {
+const Comments = ({ postSlug }: {postSlug: string}) => {
 	const { data, mutate, isLoading } = useSWR(
 		`http://localhost:3000/api/comments?postSlug=${postSlug}`,
 		fetcher,
 	);
 
-	const handleSubmit = async (e: any) => {
+	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		  const inputElement = e.currentTarget[0] as HTMLInputElement;
 		await fetch('/api/comments', {
 			method: 'POST',
-			body: JSON.stringify({ desc: e.target[0].value, postSlug }),
+			body: JSON.stringify({ desc: inputElement.value, postSlug }),
 		});
 		mutate();
-		e.target[0].value = '';
+		inputElement.value = '';
 	};
 
 	return (
@@ -39,7 +41,7 @@ const Comments = ({ postSlug }: any) => {
 			<CommentInput handleSubmit={handleSubmit} />
 			{/* <Suspense fallback={<Loading />}> */}
 				<div className='flex flex-col gap-4 mt-10'>
-					{data?.map((comment: any) => (
+					{data?.map((comment: CommentType) => (
 						<Comment {...comment} key={comment._id} />
 					))}
 				</div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import Category from '@/UI/Category';
 import { CategoryType } from '@/types';
 

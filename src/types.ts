@@ -27,10 +27,11 @@ export type PostType = {
 };
 
 type CardUpdateType = {
-    _id: string;
-    slug: string;
-    key: string;
-}
+	_id: string;
+	slug: string;
+	key: string;
+};
 
+export type CardType = PostType & CardUpdateType;
 
-export type CardType = PostType & CardUpdateType
+export type CommentType = Pick<CardType, 'user' | 'createdAt' | 'desc' | '_id'>;
