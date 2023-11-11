@@ -1,43 +1,45 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
+import { CategoryType } from '@/types';
 
-const Featured = () => {
+const getPosts = async (page: number, category: any) => {
+	const response = await fetch(
+		`http://localhost:3000/api/posts?page=${page}&cat=${category || ''}`,
+	);
+	if (!response.ok) {
+		throw new Error('Loading posts failed...');
+	}
+	return response.json();
+};
+
+const Featured = async () => {
+	const { posts } = await getPosts(1, '');
+	const { title, desc, img, createdAt, categorySlug, slug } = posts[0];
+
 	return (
 		<article className='gradient px-6 py-10 h-full rounded flex flex-col-reverse lg:flex-row flex-1 gap-6'>
 			<div className='flex flex-col leading-7 flex-1 text-justify'>
-				<p>
-					Id semper risus in hendrerit gravida. Eget nullam non nisi
-					est sit amet facilisis magna etiam. Gravida dictum fusce ut
-					placerat. Elit sed vulputate mi sit. Aliquam sem fringilla
-					ut morbi. Et pharetra pharetra massa massa.
-				</p>
-				<p>
-					Porttitor massa id neque aliquam vestibulum morbi. Orci
-					porta non pulvinar neque laoreet suspendisse interdum
-					consectetur libero. Pulvinar mattis nunc sed blandit libero
-					volutpat. Aliquam sem et tortor consequat id porta nibh
-					venenatis.
-				</p>
+				<p>{desc.substring(0, 600)}...</p>
 				<Link
-					href='/'
+					href={`/posts/${slug}`}
 					className='shadow max-w-[35%] rounded py-3 px-6 mt-4'
 				>
 					Read more
 				</Link>
 			</div>
-			<div className='flex-1 flex flex-col justify-between gap-4 items-center lg:gap-0'>
-				<h2 className='text-4xl font-semibold'>
-					The one about new beginnings...
-				</h2>
-
-				<Image
-					src='/coder.jpg'
-					alt='coder ghost'
-					className='invert rounded'
-					width={400}
-					height={100}
-				/>
+			<div className='flex-1 flex flex-col justify-between gap-4 items-start lg:gap-0'>
+				<h2 className='text-4xl font-semibold'>{title}</h2>
+				<div className='relative rounded overflow-hidden h-[300px] w-[400px]'>
+					<Image
+						src={img}
+						alt='coder ghost'
+						className='invert rounded'
+						height={400}
+						width={300}
+						layout='fixed'
+					/>
+				</div>
 			</div>
 		</article>
 	);

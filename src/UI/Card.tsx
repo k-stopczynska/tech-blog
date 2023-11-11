@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CardType } from '@/types';
 
-const Card = ({ title, img, createdAt, categorySlug, slug, key }: CardType) => {
+const Card = ({ title, desc, img, createdAt, categorySlug, slug, key }: CardType) => {
 	return (
 		<Link href={`/posts/${slug}`} className='container' key={key}>
 			<section className='card'>
@@ -13,10 +13,7 @@ const Card = ({ title, img, createdAt, categorySlug, slug, key }: CardType) => {
 				<h2 className='title'>{title}</h2>
 
 				<div className='content'>
-					<p>
-						Lorem ipsum is a placeholder text commonly used to
-						demonstrate the visual form of a document .
-					</p>
+					<p>{desc.substring(0, 80)}...</p>
 					<p>
 						{createdAt?.split('T')[0]}
 						<span>{categorySlug}</span>
