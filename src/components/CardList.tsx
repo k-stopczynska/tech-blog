@@ -6,6 +6,13 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Card from '@/UI/Card';
 import Pagination from '@/components/Pagination';
+import { SearchParamsType } from '@/types';
+
+type UpdatedSearchParamsType = {
+	[K in keyof SearchParamsType]: K extends 'page'
+		? number
+		: SearchParamsType[K];
+};
 
 const fetcher = async (url: string) => {
 	const res = await fetch(url);
@@ -17,16 +24,15 @@ const fetcher = async (url: string) => {
 	return data;
 };
 
-const CardList = ({ page, category }: any) => {
-
+const CardList = ({ page, category }: UpdatedSearchParamsType) => {
 	const { data, mutate, isLoading } = useSWR(
 		`http://localhost:3000/api/posts?page=${page}&cat=${category || ''}`,
 		fetcher,
 	);
 
 	const POSTS_PER_PAGE = 7;
-	const hasPrev = POSTS_PER_PAGE * (page - 1) > 0;
-	const hasNext = POSTS_PER_PAGE * (page - 1) + POSTS_PER_PAGE < data?.count;
+	const hasPrev = POSTS_PER_PAGE * (+page - 1) > 0;
+	const hasNext = POSTS_PER_PAGE * (+page - 1) + POSTS_PER_PAGE < data?.count;
 
 	const sectionRef = useRef(null);
 	const triggerRef = useRef(null);
