@@ -11,7 +11,7 @@ import { UpdatedSearchParamsType, CardType } from '@/types';
 import { fetcher } from '@/utils/fetcher'
 
 
-const CardList = ({ page, category }: UpdatedSearchParamsType) => {
+const CardListSwiper = ({ page, category }: UpdatedSearchParamsType) => {
 	const { data, mutate, isLoading } = useSWR(
 		`http://localhost:3000/api/posts?page=${page}&cat=${category || ''}`,
 		fetcher,
@@ -60,4 +60,4 @@ const CardList = ({ page, category }: UpdatedSearchParamsType) => {
 	);
 };
 
-export default CardList;
+export default CardListSwiper;

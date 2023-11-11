@@ -1,8 +1,12 @@
 import React from 'react';
-import CardList from '@/components/CardList';
+import CardList from '@/components/CardListScroller';
 import { SearchParamsType } from '@/types';
 
-export default function BlogPage({ searchParams }: { searchParams: SearchParamsType }) {
+export default function BlogPage({
+	searchParams,
+}: {
+	searchParams: SearchParamsType;
+}) {
 	const page = parseInt(searchParams.page) || 1;
 	const { category } = searchParams;
 
@@ -14,4 +18,4 @@ export default function BlogPage({ searchParams }: { searchParams: SearchParamsT
 			<CardList page={page} category={category} />
 		</div>
 	);
-};
+}
