@@ -7,23 +7,9 @@ import 'swiper/css/free-mode';
 import { FreeMode, Pagination } from 'swiper/modules';
 import useSWR from 'swr';
 import Card from '@/UI/Card';
-import { SearchParamsType, CardType } from '@/types';
+import { UpdatedSearchParamsType, CardType } from '@/types';
+import { fetcher } from '@/utils/fetcher'
 
-type UpdatedSearchParamsType = {
-	[K in keyof SearchParamsType]: K extends 'page'
-		? number
-		: SearchParamsType[K];
-};
-
-const fetcher = async (url: string) => {
-	const res = await fetch(url);
-	const data = await res.json();
-	if (!res.ok) {
-		const error = new Error(data.message);
-		throw error;
-	}
-	return data;
-};
 
 const CardList = ({ page, category }: UpdatedSearchParamsType) => {
 	const { data, mutate, isLoading } = useSWR(
@@ -55,13 +41,13 @@ const CardList = ({ page, category }: UpdatedSearchParamsType) => {
 						clickable: true,
 					}}
 					modules={[FreeMode, Pagination]}
-					className='w-full gap-6 h-[430px]'
+					className='w-full gap-6 h-[500px]'
 				>
 					{data?.posts?.map((card: CardType) => (
 						<SwiperSlide>
 							<div
 								className='flex flex-col gap-6 relative group w-full
-	h-[420px]'
+	h-[500px]'
 								key={card._id}
 							>
 								<Card {...card} key={card._id} />

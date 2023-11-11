@@ -32,6 +32,12 @@ type CardUpdateType = {
 	key: string;
 };
 
+export type UpdatedSearchParamsType = {
+	[K in keyof SearchParamsType]: K extends 'page'
+		? number
+		: SearchParamsType[K];
+};
+
 export type CardType = PostType & CardUpdateType;
 
 export type CommentType = Pick<CardType, 'user' | 'createdAt' | 'desc' | '_id'>;

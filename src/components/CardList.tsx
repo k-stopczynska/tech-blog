@@ -6,23 +6,9 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Card from '@/UI/Card';
 import Pagination from '@/components/Pagination';
-import { SearchParamsType, CardType } from '@/types';
+import { UpdatedSearchParamsType, CardType } from '@/types';
+import { fetcher } from '@/utils/fetcher';
 
-type UpdatedSearchParamsType = {
-	[K in keyof SearchParamsType]: K extends 'page'
-		? number
-		: SearchParamsType[K];
-};
-
-const fetcher = async (url: string) => {
-	const res = await fetch(url);
-	const data = await res.json();
-	if (!res.ok) {
-		const error = new Error(data.message);
-		throw error;
-	}
-	return data;
-};
 
 const CardList = ({ page, category }: UpdatedSearchParamsType) => {
 	const { data, mutate, isLoading } = useSWR(
