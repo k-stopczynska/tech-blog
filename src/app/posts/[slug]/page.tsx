@@ -3,12 +3,25 @@ import Image from 'next/image';
 import Author from '@/UI/Author';
 import Comments from '@/components/Comments';
 
-{
-	/* <Type>(arg: Type): Type */
-}
-// const getPost: (slug: string) => Promise<any>;
+type CategorySlug =
+	| 'soft'
+	| 'hard'
+	| 'places'
+	| 'materials'
+	| 'lifestyle'
+	| 'games'
+	| 'hobbies';
 
-const getPost = async (slug: string): Promise<PostPageProps> => {
+type PostPageType = {
+	title: string;
+	desc: string;
+	createdAt: string;
+	user: { name: string; email: string; img: string };
+	img: string;
+	categorySlug: CategorySlug;
+};
+
+const getPost = async (slug: string): Promise<PostPageType> => {
 	const response = await fetch(`http://localhost:3000/api/posts/${slug}`);
 	if (!response.ok) {
 		throw new Error('fetching this post failed, try again');
@@ -16,16 +29,7 @@ const getPost = async (slug: string): Promise<PostPageProps> => {
 	return response.json();
 };
 
-type PostPageProps = {
-	title: string;
-	desc: string;
-	createdAt: string;
-	user: { name: string; email: string; img: string };
-	img: string;
-	categorySlug: string;
-};
-
-export default async function PostPage({ params }: any) {
+export default async function PostPage({ params }: { params: {slug: string} }) {
 	const { slug } = params;
 	const post = await getPost(slug);
 
