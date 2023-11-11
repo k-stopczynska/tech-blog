@@ -86,8 +86,8 @@
 	border-radius: 4px;
 	padding: 1rem;
 	position: relative;
-	max-width: 300px;
-	height: 215px;
+	width: 350px;
+	height: 335px;
 	display: flex;
 	flex-direction: column;
 	transition: 0.3s ease-in-out;
@@ -115,13 +115,14 @@
 }
 
 .card:hover {
-	height: 320px;
+	height: 420px;
 }
 
 .image {
 	position: absolute;
-	width: 160px;
-	height: 160px;
+	width: 240px;
+	max-height: 240px;
+	overflow: hidden;
 	background-image: linear-gradient(
 		var(--angle),
 		rgba(114, 90, 193, 1),
@@ -129,7 +130,7 @@
 	);
 	animation: 5s rotate linear infinite;
 	top: -10%;
-	left: 60px;
+	left: 55px;
 	box-shadow: 0 5px 20px #725ac1;
 	border-radius: 4px;
 	z-index: 10;
@@ -139,7 +140,7 @@
 .title {
 	position: relative;
 	text-align: center;
-	top: 150px;
+	top: 220px;
 	transition: 0.3s ease-in-out;
 }
 
@@ -151,7 +152,7 @@
 
 .content {
 	position: relative;
-	top: 80px;
+	top: 140px;
 	padding: 10px 15px;
 	color: #f5e6e8;
 	visibility: hidden;

@@ -46,7 +46,7 @@ const CardList = ({ page, category }: UpdatedSearchParamsType) => {
 				translateX: 0,
 			},
 			{
-				translateX: '-1500px',
+				translateX: '-2000px',
 				ease: 'none',
 				duration: 1,
 				scrollTrigger: {
@@ -66,7 +66,7 @@ const CardList = ({ page, category }: UpdatedSearchParamsType) => {
 
 	return (
 		<section className='overflow-hidden py-10 border-y-2 border-secondary-200'>
-			<h3 className='text-lg md:text-2xl font-bold mb-4'>Posts</h3>
+			<h3 className='text-lg md:text-2xl font-bold mb-20'>Posts</h3>
 			<div ref={triggerRef}>
 				<div
 					ref={sectionRef}
