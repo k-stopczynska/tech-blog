@@ -14,13 +14,14 @@ export const GET = async (req: NextApiRequest) => {
 		where: {
 			...(cat && { categorySlug: cat }),
 		},
-		orderBy: [{
+		orderBy: {
 			createdAt: 'desc',
-		}],
+		},
 	};
 
 	try {
 		const [posts, count] = await prisma.$transaction([
+			// TODO: find why type of createdAt is string and not Date
 			prisma.post.findMany(query),
 			prisma.post.count({ where: query.where }),
 		]);

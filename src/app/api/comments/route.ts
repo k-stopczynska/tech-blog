@@ -23,8 +23,8 @@ export const GET = async (req: NextApiRequest) => {
 		);
 	}
 };
-
-export const POST = async (req: NextApiRequest) => {
+// TODO: find proper req type to use json method
+export const POST = async (req: any) => {
 	const session = await getAuthSession();
 	if (!session) {
 		return new NextResponse(
@@ -34,7 +34,7 @@ export const POST = async (req: NextApiRequest) => {
 	}
 
 	try {
-		const body = await JSON.parse(req.body);
+		const body = await req.json();
 		const comment = await prisma.comment.create({
 			data: { ...body, userEmail: session?.user?.email },
 		});
