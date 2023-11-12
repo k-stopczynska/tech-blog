@@ -1,9 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Author = ({ author, timestamp, image }: any) => {
+type AuthorType = {
+	author: string,
+	timestamp: string,
+	image: string
+}
+
+const Author = ({ author, timestamp, image }: AuthorType) => {
 	const [name, surname] = author?.split(' ');
-	console.log(image, author)
 
 	return (
 		<div className='flex items-center gap-2 lg:mb-0'>
