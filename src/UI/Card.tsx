@@ -1,9 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import CardContent from '@/UI/CardContent';
 import { CardType } from '@/types';
 
-const Card = ({ title, desc, img, createdAt, categorySlug, slug, key }: CardType) => {
+const Card = ({
+	title,
+	desc,
+	img,
+	createdAt,
+	categorySlug,
+	slug,
+	key,
+}: CardType) => {
 	return (
 		<Link href={`/posts/${slug}`} className='container' key={key}>
 			<section className='card'>
@@ -14,15 +23,10 @@ const Card = ({ title, desc, img, createdAt, categorySlug, slug, key }: CardType
 					{title}
 				</h2>
 				<div className='flex justify-between title text-secondary-100'>
-					<p>
-						{createdAt?.split('T')[0]}
-					</p>
+					<p>{createdAt.toLocaleString()?.split('T')[0]}</p>
 					<span>{categorySlug}</span>
 				</div>
-
-				<div className='content'>
-					<p>{desc.substring(0, 120)}...</p>
-				</div>
+				<CardContent desc={desc} />
 			</section>
 		</Link>
 	);

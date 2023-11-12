@@ -54,7 +54,10 @@ export default async function PostPage({
 					/>
 				</div>
 			</div>
-			<p className='text-base md:text-lg text-justify '>{desc}</p>
+			<div
+				className='text-base md:text-lg text-justify '
+				dangerouslySetInnerHTML={{ __html: desc }}
+			></div>
 			<Comments postSlug={slug} />
 		</article>
 	);
