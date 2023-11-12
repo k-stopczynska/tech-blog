@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import CardContent from '@/UI/CardContent';
+import Content from '@/UI/Content';
 import { CardType } from '@/types';
 
 const Card = ({
@@ -26,7 +26,9 @@ const Card = ({
 					<p>{createdAt.toLocaleString()?.split('T')[0]}</p>
 					<span>{categorySlug}</span>
 				</div>
-				<CardContent desc={desc} />
+				<div className='content'>
+					<Content desc={desc} variant='card' />
+				</div>
 			</section>
 		</Link>
 	);

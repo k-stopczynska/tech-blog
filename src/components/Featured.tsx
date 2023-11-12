@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
-import { CategoryType } from '@/types';
+import Content from '@/UI/Content';
 
 const getPosts = async (page: number, category: any) => {
 	const response = await fetch(
@@ -20,7 +20,7 @@ const Featured = async () => {
 	return (
 		<article className='gradient px-6 py-10 h-full w-full rounded flex flex-col-reverse lg:flex-row flex-1 gap-6'>
 			<div className='flex flex-col leading-7 flex-1 text-justify'>
-				<p>{desc.substring(0, 600)}...</p>
+				<Content desc={desc} variant='featured' />
 				<Link
 					href={`/posts/${slug}`}
 					className='shadow max-w-[35%] rounded py-3 px-6 mt-4'

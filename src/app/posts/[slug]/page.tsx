@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Author from '@/UI/Author';
+import Content from '@/UI/Content';
 import Comments from '@/components/Comments';
 import { PostType } from '@/types';
 
@@ -54,10 +55,7 @@ export default async function PostPage({
 					/>
 				</div>
 			</div>
-			<div
-				className='text-base md:text-lg text-justify '
-				dangerouslySetInnerHTML={{ __html: desc }}
-			></div>
+			<Content desc={desc} variant='post' />
 			<Comments postSlug={slug} />
 		</article>
 	);
