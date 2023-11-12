@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import Button from '@/UI/Button';
@@ -30,14 +30,19 @@ export default function WritePage() {
 			.replace(/[\s_-]+/g, '-')
 			.replace(/^-+|-+$/g, '');
 
-	const handleSubmit = async (e: any) => {
+	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		const title = e.currentTarget[0] as HTMLInputElement;
+		const categorySlug = e.currentTarget[1] as HTMLInputElement;
+		const imgUpload = e.currentTarget[2] as HTMLInputElement;
+		const imgDownload = e.currentTarget[3] as HTMLInputElement;
+		const desc = e.currentTarget[4] as HTMLInputElement;
 		const post = {
-			title: e.target[0].value,
-			slug: slugify(e.target[0].value),
-			categorySlug: e.target[1].value,
-			img: e.target[2].value || e.target[3].value,
-			desc: e.target[4].value,
+			title: title.value,
+			slug: slugify(title.value),
+			categorySlug: categorySlug.value,
+			img: imgUpload.value || imgDownload.value,
+			desc: desc.value,
 		};
 
 		const response = await fetch('/api/posts', {
@@ -48,8 +53,8 @@ export default function WritePage() {
 			body: JSON.stringify(post),
 		});
 		if (!response.ok) {
-				throw new Error(`HTTP error! Status: ${response.status}`);
-			}
+			throw new Error(`HTTP error! Status: ${response.status}`);
+		}
 		if (response.status === 200) {
 			const data = await response.json();
 			setMessage(

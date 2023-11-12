@@ -17,7 +17,7 @@ const CommentInput = ({ handleSubmit }: { handleSubmit: (e: FormEvent<HTMLFormEl
 					<textarea
 						name='message'
 						rows={5}
-						className='text-primary-100 bg-light-100 w-full p-4'
+						className='text-primary-100 bg-light-100 w-full p-4 rounded'
 					/>
 					<Button
 						type='submit'

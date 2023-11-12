@@ -4,12 +4,12 @@ import { CommentType } from '@/types';
 
 const Comment = ({ user, createdAt, desc }: CommentType) => {
 	return (
-		<div className='flex flex-col w-full max-h-min border gap-4 p-4 shadow-light-100 shadow-sm'>
+		<div className='flex flex-col w-full max-h-min border rounded gap-4 p-4 shadow-light-100 shadow-sm'>
 			<p>{desc}</p>
 			<Author
 				author={user.name}
 				image={user.img}
-				timestamp={createdAt.split('T')[0]}
+				timestamp={createdAt.toLocaleString().split('T')[0]}
 			/>
 		</div>
 	);
