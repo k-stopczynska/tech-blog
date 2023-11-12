@@ -15,7 +15,7 @@ const Button = ({
 	type,
 	disabled,
 }: ButtonPropsType) => {
-	const baseClass = 'border rounded px-6 py-3 ';
+	
 	let variantClass;
 
 	if (variant === 'simpleButton') {

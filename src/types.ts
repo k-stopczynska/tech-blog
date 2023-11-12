@@ -21,7 +21,7 @@ export type PostType = {
 	title: string;
 	desc: string;
 	createdAt: Date;
-	user: { name: string; email: string; img: string };
+	user: { name: string; email: string; image: string };
 	img: string;
 	categorySlug: CategorySlug;
 };
