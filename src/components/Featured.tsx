@@ -30,7 +30,7 @@ const Featured = async () => {
 			</div>
 			<div className='flex-1 flex flex-col justify-between gap-4 items-start lg:gap-0'>
 				<h2 className='text-4xl font-semibold'>{title}</h2>
-				<div className='relative rounded overflow-hidden h-[300px] w-[400px]'>
+				<div className='relative rounded overflow-hidden h-[400px] w-[300px]'>
 					<Image
 						src={img}
 						alt='coder ghost'
