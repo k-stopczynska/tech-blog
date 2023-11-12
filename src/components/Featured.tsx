@@ -18,7 +18,7 @@ const Featured = async () => {
 	const { title, desc, img, createdAt, categorySlug, slug } = posts[0];
 
 	return (
-		<article className='gradient px-6 py-10 h-full rounded flex flex-col-reverse lg:flex-row flex-1 gap-6'>
+		<article className='gradient px-6 py-10 h-full w-full rounded flex flex-col-reverse lg:flex-row flex-1 gap-6'>
 			<div className='flex flex-col leading-7 flex-1 text-justify'>
 				<p>{desc.substring(0, 600)}...</p>
 				<Link
@@ -37,7 +37,6 @@ const Featured = async () => {
 						className='invert rounded'
 						height={400}
 						width={300}
-						layout='fixed'
 					/>
 				</div>
 			</div>
