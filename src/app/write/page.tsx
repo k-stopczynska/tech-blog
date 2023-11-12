@@ -42,9 +42,14 @@ export default function WritePage() {
 
 		const response = await fetch('/api/posts', {
 			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
 			body: JSON.stringify(post),
 		});
-
+		if (!response.ok) {
+				throw new Error(`HTTP error! Status: ${response.status}`);
+			}
 		if (response.status === 200) {
 			const data = await response.json();
 			setMessage(
@@ -93,11 +98,12 @@ export default function WritePage() {
 					name='image-select'
 				>
 					<option value=''>Choose image</option>
-					<option value='/soft.jpeg'>soft</option>
-					<option value='/hard.jpeg'>hard</option>
-					<option value='/book.jpeg'>materials</option>
-					<option value='/*.jpeg'>lifestyle</option>
-					<option value='/*.jpeg'>games</option>
+					<option value='/coder.jpg'>soft</option>
+					<option value='/hard.jpg'>hard</option>
+					<option value='/materials.jpg'>materials</option>
+					<option value='/city.jpg'>places</option>
+					<option value='/lifestyle.jpeg'>lifestyle</option>
+					<option value='/games.jpg'>games</option>
 					<option value='/*.jpeg'>hobbies</option>
 				</select>
 			</div>
