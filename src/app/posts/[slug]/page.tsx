@@ -40,7 +40,7 @@ export default async function PostPage({
 					</h1>
 					<Author
 						author={user.name}
-						timestamp={createdAt.split('T')[0]}
+						timestamp={createdAt.toLocaleString().split('T')[0]}
 						image={categoryImages[categorySlug]}
 					/>
 				</div>

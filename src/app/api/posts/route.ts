@@ -14,9 +14,9 @@ export const GET = async (req: NextApiRequest) => {
 		where: {
 			...(cat && { categorySlug: cat }),
 		},
-		orderBy: {
+		orderBy: [{
 			createdAt: 'desc',
-		},
+		}],
 	};
 
 	try {

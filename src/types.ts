@@ -20,7 +20,7 @@ type CategorySlug =
 export type PostType = {
 	title: string;
 	desc: string;
-	createdAt: string;
+	createdAt: Date;
 	user: { name: string; email: string; img: string };
 	img: string;
 	categorySlug: CategorySlug;
