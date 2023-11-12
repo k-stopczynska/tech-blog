@@ -15,7 +15,7 @@ const Author = ({ author, timestamp, image }: any) => {
 			/>
 			<div>
 				<p>{timestamp}</p>
-				<p className='uppercase text-[#0de3e0]'>
+				<p className='uppercase text-secondary-100'>
 					{name}
 					<span className='text-light-100 pl-1'>{surname}</span>
 				</p>
