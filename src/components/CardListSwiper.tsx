@@ -7,6 +7,7 @@ import 'swiper/css/free-mode';
 import { FreeMode, Pagination } from 'swiper/modules';
 import useSWR from 'swr';
 import Card from '@/UI/Card';
+import PaginationComp from '@/components/Pagination';
 import { UpdatedSearchParamsType, CardType } from '@/types';
 import { fetcher } from '@/utils/fetcher'
 
@@ -16,6 +17,11 @@ const CardListSwiper = ({ page, category }: UpdatedSearchParamsType) => {
 		`http://localhost:3000/api/posts?page=${page}&cat=${category || ''}`,
 		fetcher,
 	);
+
+		const POSTS_PER_PAGE = 7;
+		const hasPrev = POSTS_PER_PAGE * (+page - 1) > 0;
+		const hasNext =
+			POSTS_PER_PAGE * (+page - 1) + POSTS_PER_PAGE < data?.count;
 
 	return (
 		<section className='overflow-hidden py-10 border-y-2 border-secondary-200'>
@@ -56,6 +62,7 @@ const CardListSwiper = ({ page, category }: UpdatedSearchParamsType) => {
 					))}
 				</Swiper>
 			</div>
+			<PaginationComp page={page} hasPrev={hasPrev} hasNext={hasNext} />
 		</section>
 	);
 };
