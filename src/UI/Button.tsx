@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 
-const Button = ({ title, variant, onClick, type, disabled }: any) => {
+type ButtonPropsType = {
+	title: string,
+	variant: 'simpleButton'|'simpleNavButton',
+	onClick?: (arg: FormEvent) => void,
+	type: 'button'|'submit',
+	disabled?: boolean
+};
+
+const Button = ({
+	title,
+	variant,
+	onClick,
+	type,
+	disabled,
+}: ButtonPropsType) => {
 	const baseClass = 'border rounded px-6 py-3 ';
 	let variantClass;
 

@@ -122,10 +122,8 @@ export default function WritePage() {
 			<Button
 				type='submit'
 				variant='simpleButton'
-				source=''
-				url=''
 				title='Send'
-				name='send'
+
 			/>
 			<Link href='/' className='text-xl border'>
 				{message}

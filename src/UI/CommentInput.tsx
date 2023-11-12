@@ -22,8 +22,6 @@ const CommentInput = ({ handleSubmit }: { handleSubmit: (e: FormEvent<HTMLFormEl
 					<Button
 						type='submit'
 						variant='simpleButton'
-						source=''
-						url=''
 						title='Wyślij'
 					/>
 				</form>
