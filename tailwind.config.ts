@@ -20,7 +20,6 @@ module.exports = {
 				'primary-100': '#01172f',
 				'secondary-100': '#fe5d9f',
 				'secondary-200': '#725ac1',
-				'secondary-300': '#bada55',
 			},
 		},
 		plugins: [],

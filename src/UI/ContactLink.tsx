@@ -1,5 +1,4 @@
-import React, { forwardRef, Ref } from 'react';
-import Link from 'next/link';
+import React, { forwardRef } from 'react';
 import Image from 'next/image';
 
 interface ContactLinkProps {

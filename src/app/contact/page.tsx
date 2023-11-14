@@ -60,7 +60,7 @@ const ContactPage = () => {
 		};
 	}, []);
 	return (
-		<section className='relative w-full h-[80vh]'>
+		<section className='relative w-full h-[80vh] link-container'>
 			<ContactLink
 				href='mailto: k.stopczynska@gmail.com'
 				ref={emailRef}
@@ -83,7 +83,7 @@ const ContactPage = () => {
 				src='./icons8-linkedin.svg'
 				alt='linkedin'
 				size={160}
-				color='blue-300'
+				color='light-100'
 			/>
 			<ContactLink
 				href='https://www.instagram.com/a_in_spiring/'
@@ -91,7 +91,7 @@ const ContactPage = () => {
 				src='./icons8-instagram.svg'
 				alt='instagram'
 				size={140}
-				color='yellow-300'
+				color='secondary-100'
 			/>
 			<ContactLink
 				href='https://github.com/k-stopczynska'
