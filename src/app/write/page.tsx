@@ -107,7 +107,7 @@ export default function WritePage() {
 					<option value='/hard.jpg'>hard</option>
 					<option value='/materials.jpg'>materials</option>
 					<option value='/city.jpg'>places</option>
-					<option value='/lifestyle.jpeg'>lifestyle</option>
+					<option value='/lifestyle.jpg'>lifestyle</option>
 					<option value='/games.jpg'>games</option>
 					<option value='/*.jpeg'>hobbies</option>
 				</select>
@@ -119,12 +119,7 @@ export default function WritePage() {
 				className='bg-primary-100 border rounded w-full p-4'
 				placeholder='Post'
 			/>
-			<Button
-				type='submit'
-				variant='simpleButton'
-				title='Send'
-
-			/>
+			<Button type='submit' variant='simpleButton' title='Send' />
 			<Link href='/' className='text-xl border'>
 				{message}
 			</Link>
