@@ -14,42 +14,42 @@ const ContactPage = () => {
 		const email = gsap.to(emailRef.current, {
 			rotation: 360,
 			duration: 2.5,
-			delay: 1.5,
+			delay: 0.5,
 			ease: 'bounce.out',
 			x: 0,
-			y: 350,
+			y: 450,
 		});
 		const instagram = gsap.to(instagramRef.current, {
 			rotation: 360,
 			duration: 3,
-			delay: 2,
+			delay: 1,
 			ease: 'steps(12)',
 			x: -150,
-			y: 700,
+			y: 800,
 		});
 		const linkedin = gsap.to(linkedinRef.current, {
 			rotation: 360,
 			duration: 1.5,
-			delay: 2,
+			delay: 1,
 			ease: 'bounce.out',
 			x: -225,
-			y: 450,
+			y: 550,
 		});
 		const facebook = gsap.to(facebookRef.current, {
 			rotation: 360,
 			duration: 1.5,
-			delay: 2.5,
+			delay: 1.5,
 			ease: 'bounce.out',
 			x: 100,
-			y: 700,
+			y: 800,
 		});
 		const github = gsap.to(githubRef.current, {
 			rotation: 360,
 			duration: 2.5,
-			delay: 1,
+			delay: 0,
 			ease: 'steps(12)',
 			x: 200,
-			y: 500,
+			y: 600,
 		});
 		return () => {
 			email.kill();
