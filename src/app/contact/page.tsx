@@ -3,6 +3,7 @@ import React, { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import Link from 'next/link';
 import Image from 'next/image';
+import ContactLink from '@/UI/ContactLink';
 
 const ContactPage = () => {
 	const emailRef = useRef(null);
@@ -38,7 +39,7 @@ const ContactPage = () => {
 		});
 		const facebook = gsap.to(facebookRef.current, {
 			rotation: 360,
-			duration: 3,
+			duration: 1.5,
 			delay: 2.5,
 			ease: 'bounce.out',
 			x: 100,
@@ -46,8 +47,8 @@ const ContactPage = () => {
 		});
 		const github = gsap.to(githubRef.current, {
 			rotation: 360,
-			duration: 1,
-			delay: .5,
+			duration: 2.5,
+			delay: 1,
 			ease: 'steps(12)',
 			x: 200,
 			y: 500,
@@ -62,75 +63,46 @@ const ContactPage = () => {
 	}, []);
 	return (
 		<section className='relative w-full h-[80vh]'>
-			<Link
+			<ContactLink
 				href='#'
 				ref={emailRef}
-				className='absolute w-[100px] h-[100px] top-[-50%] left-[50%]'
-			>
-				<Image
-					src='./icons8-email.svg'
-					alt='email'
-					width={100}
-					height={100}
-					className='bg-secondary-100 rounded-full'
-				/>
-			</Link>
-
-			<Link
+				src='./icons8-email.svg'
+				alt='email'
+				size={100}
+				color='secondary-100'
+			/>
+			<ContactLink
 				href='#'
 				ref={facebookRef}
-				className='absolute w-[120px] h-[120px] top-[-50%] left-[50%]'
-			>
-				<Image
-					src='./icons8-facebook.svg'
-					alt='facebook'
-					width={120}
-					height={120}
-					className='bg-light-100 rounded-full absolute'
-				/>
-			</Link>
-
-			<Link
+				src='./icons8-facebook.svg'
+				alt='facebook'
+				size={120}
+				color='light-100'
+			/>
+			<ContactLink
 				href='#'
 				ref={linkedinRef}
-				className='absolute w-[160px] h-[160px] top-[-50%] left-[50%]'
-			>
-				<Image
-					src='./icons8-linkedin.svg'
-					alt='linkedIn'
-					width={160}
-					height={160}
-					className='bg-blue-300 rounded-full'
-				/>
-			</Link>
-
-			<Link
+				src='./icons8-linkedin.svg'
+				alt='linkedin'
+				size={160}
+				color='blue-300'
+			/>
+			<ContactLink
 				href='#'
 				ref={instagramRef}
-				className='absolute w-[140px] h-[140px] top-[-50%] left-[50%] '
-			>
-				<Image
-					src='./icons8-instagram.svg'
-					alt='instagram'
-					width={140}
-					height={140}
-					className='bg-yellow-300 rounded-full'
-				/>
-			</Link>
-
-			<Link
+				src='./icons8-instagram.svg'
+				alt='instagram'
+				size={140}
+				color='yellow-300'
+			/>
+			<ContactLink
 				href='#'
 				ref={githubRef}
-				className='absolute w-[80px] h-[80px] top-[-50%] left-[50%] '
-			>
-				<Image
-					src='./icons8-github.svg'
-					alt='github'
-					width={80}
-					height={80}
-					className='bg-[#BADA55] rounded-full'
-				/>
-			</Link>
+				src='./icons8-github.svg'
+				alt='github'
+				size={80}
+				color='secondary-200'
+			/>
 		</section>
 	);
 };
