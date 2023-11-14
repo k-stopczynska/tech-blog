@@ -1,8 +1,6 @@
 'use client';
 import React, { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
-import Link from 'next/link';
-import Image from 'next/image';
 import ContactLink from '@/UI/ContactLink';
 
 const ContactPage = () => {
@@ -64,7 +62,7 @@ const ContactPage = () => {
 	return (
 		<section className='relative w-full h-[80vh]'>
 			<ContactLink
-				href='#'
+				href='mailto: k.stopczynska@gmail.com'
 				ref={emailRef}
 				src='./icons8-email.svg'
 				alt='email'
@@ -72,7 +70,7 @@ const ContactPage = () => {
 				color='secondary-100'
 			/>
 			<ContactLink
-				href='#'
+				href='https://www.facebook.com/klaudia.stopczynska/'
 				ref={facebookRef}
 				src='./icons8-facebook.svg'
 				alt='facebook'
@@ -80,7 +78,7 @@ const ContactPage = () => {
 				color='light-100'
 			/>
 			<ContactLink
-				href='#'
+				href='https://www.linkedin.com/in/klaudia-stopczynska/'
 				ref={linkedinRef}
 				src='./icons8-linkedin.svg'
 				alt='linkedin'
@@ -88,7 +86,7 @@ const ContactPage = () => {
 				color='blue-300'
 			/>
 			<ContactLink
-				href='#'
+				href='https://www.instagram.com/a_in_spiring/'
 				ref={instagramRef}
 				src='./icons8-instagram.svg'
 				alt='instagram'
@@ -96,7 +94,7 @@ const ContactPage = () => {
 				color='yellow-300'
 			/>
 			<ContactLink
-				href='#'
+				href='https://github.com/k-stopczynska'
 				ref={githubRef}
 				src='./icons8-github.svg'
 				alt='github'
