@@ -1,10 +1,12 @@
 'use client'
 
-import React from 'react';
+import React, { useRef, Suspense } from 'react';
 import { Engine, Scene } from 'react-babylonjs';
-import { Vector3 } from '@babylonjs/core';
+import { Vector3, Color3 } from '@babylonjs/core';
+import Ground from '@/components/Ground';
 
 const MainScene = () => {
+	const boxRef = useRef();
   return (
 		<Engine antialias adaptToDeviceRatio canvasId='babylon-canvas'>
 			<Scene>
@@ -15,7 +17,7 @@ const MainScene = () => {
 				/>
 				<freeCamera
 					name='camera1'
-					position={new Vector3(0, 15, 0)}
+					position={new Vector3(0, 10, -20)}
 					setTarget={[Vector3.Zero()]}
 				/>
 
@@ -37,10 +39,12 @@ const MainScene = () => {
 						blurKernel={64}
 						shadowCastChildren
 					>
-				
+			
 					</shadowGenerator>
 				</directionalLight>
-				
+				<Suspense fallback={null}>
+					<Ground />
+				</Suspense>
 			</Scene>
 		</Engine>
   );

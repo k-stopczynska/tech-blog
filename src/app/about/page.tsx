@@ -3,8 +3,8 @@ import MainScene from '@/components/MainScene';
 
 const AboutPage = () => {
   return (
-		<div className= 'w-full h-[80%]'>
-			<MainScene></MainScene>
+		<div className= 'w-full h-[800px]'>
+			<MainScene/>
 		</div>
   );
 }
