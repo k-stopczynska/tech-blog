@@ -21,9 +21,9 @@ const ContactPage = () => {
 		});
 		const instagram = gsap.to(instagramRef.current, {
 			rotation: 360,
-			duration: 3,
+			duration: 2.2,
 			delay: 1,
-			ease: 'steps(12)',
+			ease: 'steps(72)',
 			x: -150,
 			y: 800,
 		});
@@ -47,7 +47,7 @@ const ContactPage = () => {
 			rotation: 360,
 			duration: 2.5,
 			delay: 0,
-			ease: 'steps(12)',
+			ease: 'steps(36)',
 			x: 200,
 			y: 600,
 		});

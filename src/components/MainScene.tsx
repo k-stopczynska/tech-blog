@@ -1,13 +1,17 @@
-'use client'
+'use client';
 
 import React, { useRef, Suspense } from 'react';
 import { Engine, Scene } from 'react-babylonjs';
 import { Vector3, Color3 } from '@babylonjs/core';
 import Ground from '@/components/Ground';
+import FrontWall from '@/components/FrontWall';
+import LeftWall from '@/components/LeftWall';
+import RightWall from '@/components/RightWall';
 
 const MainScene = () => {
 	const boxRef = useRef();
-  return (
+
+	return (
 		<Engine antialias adaptToDeviceRatio canvasId='babylon-canvas'>
 			<Scene>
 				<hemisphericLight
@@ -17,7 +21,7 @@ const MainScene = () => {
 				/>
 				<freeCamera
 					name='camera1'
-					position={new Vector3(0, 10, -20)}
+					position={new Vector3(0, 10, -40)}
 					setTarget={[Vector3.Zero()]}
 				/>
 
@@ -38,16 +42,17 @@ const MainScene = () => {
 						useBlurExponentialShadowMap
 						blurKernel={64}
 						shadowCastChildren
-					>
-			
-					</shadowGenerator>
+					></shadowGenerator>
 				</directionalLight>
 				<Suspense fallback={null}>
+					<LeftWall />
+					<FrontWall />
+					<RightWall />
 					<Ground />
 				</Suspense>
 			</Scene>
 		</Engine>
-  );
-}
+	);
+};
 
-export default MainScene
+export default MainScene;
