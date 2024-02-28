@@ -7,7 +7,7 @@ const Content = ({ desc, variant }: { desc: string; variant: string }) => {
 		variant === 'post'
 			? desc
 			: variant === 'featured'
-			? desc.substring(0, 600) + '...'
+			? desc.substring(0, 400) + '...'
 			: desc.substring(0, 120) + '...';
 	return (
 		<div

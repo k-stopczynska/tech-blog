@@ -18,6 +18,8 @@ const CardListSwiper = ({ page, category }: UpdatedSearchParamsType) => {
 		fetcher,
 	);
 
+	console.log(data)
+
 		const POSTS_PER_PAGE = 7;
 		const hasPrev = POSTS_PER_PAGE * (+page - 1) > 0;
 		const hasNext =

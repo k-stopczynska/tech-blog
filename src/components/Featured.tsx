@@ -14,24 +14,25 @@ const getPosts = async (page: number, category: any) => {
 };
 
 const Featured = async () => {
-	const { posts } = await getPosts(1, '');
-	const { title, desc, img, createdAt, categorySlug, slug } =
-		posts[0];
+	const { posts } = await getPosts(1, 'places');
+	const { title, desc, img, slug } = posts[0];
 
 	return (
-		<article className='gradient px-6 py-10 h-full w-full rounded flex flex-col-reverse lg:flex-row flex-1 gap-6'>
+		<article className='gradient px-6 py-10 h-full w-full rounded flex flex-col-reverse md:flex-row flex-1 gap-6'>
 			<div className='flex flex-col leading-7 flex-1 text-justify'>
 				<Content desc={desc} variant='featured' />
 				<Link
 					href={`/posts/${slug}`}
-					className='shadow max-w-[35%] rounded py-3 px-6 mt-4'
+					className='shadow text-center rounded py-3 px-6 mt-4'
 				>
 					Read more
 				</Link>
 			</div>
-			<div className='flex-1 flex flex-col justify-between gap-4 items-start lg:gap-0'>
-				<h2 className='text-4xl font-semibold'>{title}</h2>
-				<div className='relative rounded overflow-hidden h-[400px] w-[300px]'>
+			<div className='flex-1 flex flex-col items-center justify-between gap-4 md:items-end lg:gap-0'>
+				<h2 className='text-4xl text-center md:text-right font-semibold'>
+					{title}
+				</h2>
+				<div className='relative rounded overflow-hidden max-h-[400px] w-[300px]'>
 					<Image
 						src={img}
 						alt='coder ghost'
