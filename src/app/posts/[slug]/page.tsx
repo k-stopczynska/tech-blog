@@ -33,7 +33,7 @@ export default async function PostPage({
 	};
 
 	return (
-		<article className='gradient mt-10 w-full p-8 md:p-20 flex flex-col justify-center gap-12 '>
+		<article className='gradient mt-10 w-full p-4 md:p-10 flex flex-col justify-center gap-12 '>
 			<div className='flex flex-col items-center justify-between lg:flex-row'>
 				<div className='flex flex-col justify-between h-[300px] flex-1'>
 					<h1 className='text-xl md:text-4xl font-bold pb-6'>

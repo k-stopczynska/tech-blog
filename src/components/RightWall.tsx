@@ -16,7 +16,7 @@ const LeftWall = () => {
 	});
 	return (
 		<box
-			name='wall-front'
+			name='wall-right'
 			width={3}
 			height={50}
 			depth={50}

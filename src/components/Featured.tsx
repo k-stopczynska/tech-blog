@@ -15,7 +15,8 @@ const getPosts = async (page: number, category: any) => {
 
 const Featured = async () => {
 	const { posts } = await getPosts(1, '');
-	const { title, desc, img, createdAt, categorySlug, slug } = posts[0];
+	const { title, desc, img, createdAt, categorySlug, slug } =
+		posts[0];
 
 	return (
 		<article className='gradient px-6 py-10 h-full w-full rounded flex flex-col-reverse lg:flex-row flex-1 gap-6'>
