@@ -28,7 +28,7 @@ const Hamburger = () => {
 			</button>
 			{isOpen && (
 				<div
-					className={`w-full md:w-[30%] h-[85%] flex flex-col gap-4 items-center justify-center bg-primary-100 absolute top-24 right-0 text-2xl z-50 ${navClass}`}
+					className={`w-full h-[90%] flex flex-col gap-4 items-center justify-center bg-primary-100 absolute top-24 right-0 text-2xl z-50 ${navClass}`}
 				>
 					<Link href='/blog' className='link '>
 						blog
@@ -61,7 +61,7 @@ const Hamburger = () => {
 								type='button'
 								className='link'
 							>
-							sign out
+								sign out
 							</button>
 						</>
 					)}
