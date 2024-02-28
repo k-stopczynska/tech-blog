@@ -30,13 +30,13 @@ const Hamburger = () => {
 				<div
 					className={`w-full h-[90%] flex flex-col gap-4 items-center justify-center bg-primary-100 absolute top-24 right-0 text-2xl z-50 ${navClass}`}
 				>
-					<Link href='/blog' className='link '>
+					<Link href='/blog' className='link ' onClick={toggleMenu}>
 						blog
 					</Link>
-					<Link href='/about' className='link'>
+					<Link href='/about' className='link' onClick={toggleMenu}>
 						about
 					</Link>
-					<Link href='/contact' className='link'>
+					<Link href='/contact' className='link' onClick={toggleMenu}>
 						contact
 					</Link>
 					{status !== 'authenticated' && (
@@ -51,7 +51,11 @@ const Hamburger = () => {
 					{status === 'authenticated' && (
 						<>
 							{data?.user?.name === 'Klaudia Stopczyńska' && (
-								<Link href='/write' className='link'>
+								<Link
+									href='/write'
+									className='link'
+									onClick={toggleMenu}
+								>
 									write
 								</Link>
 							)}
