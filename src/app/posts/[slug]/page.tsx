@@ -45,7 +45,7 @@ export default async function PostPage({
 						image={categoryImages[categorySlug]}
 					/>
 				</div>
-				<div className='lg:flex-1 overflow:hidden w-[300px] h-[400px] relative mt-10 lg:mt-0'>
+				<div className='lg:flex-1 overflow:hidden w-[300px] max-h-[400px] relative mt-10 lg:mt-0'>
 					<Image
 						src={img}
 						alt=''
