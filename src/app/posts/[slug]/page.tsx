@@ -34,9 +34,9 @@ export default async function PostPage({
 
 	return (
 		<article className='gradient mt-10 w-full p-4 md:p-10 flex flex-col justify-center gap-12 '>
-			<div className='flex flex-col items-center justify-between lg:flex-row'>
-				<div className='flex flex-col justify-between h-[300px] flex-1'>
-					<h1 className='text-xl md:text-4xl font-bold pb-6'>
+			<div className='flex flex-col items-center justify-between md:flex-row'>
+				<div className='flex flex-col flex-1 justify-between'>
+					<h1 className='text-3xl md:text-4xl font-bold pb-12'>
 						{title}
 					</h1>
 					<Author
@@ -45,14 +45,10 @@ export default async function PostPage({
 						image={categoryImages[categorySlug]}
 					/>
 				</div>
-				<div className='lg:flex-1 overflow:hidden w-[300px] max-h-[400px] relative mt-10 lg:mt-0'>
-					<Image
-						src={img}
-						alt=''
-						height={400}
-						width={300}
-						layout='fixed'
-					/>
+				<div className='flex-1 flex flex-col items-center justify-between gap-4 md:items-end lg:gap-0'>
+					<div className='overflow:hidden max-h-[400px] relative mt-10 md:mt-0'>
+						<Image src={img} alt='' height={400} width={300} />
+					</div>
 				</div>
 			</div>
 			<Content desc={desc} variant='post' />
