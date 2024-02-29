@@ -2,7 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Wrapper from '@/UI/Wrapper';
 import Navbar from '@/components/Navbar';
-import AuthProvider from '@/providers/AuthProvider'
+import Footer from '@/components/Footer';
+import AuthProvider from '@/providers/AuthProvider';
 
 export const metadata: Metadata = {
 	title: 'A_in_spiring',
@@ -21,6 +22,7 @@ export default function RootLayout({
 					<Wrapper>
 						<Navbar />
 						<main>{children}</main>
+						<Footer />
 					</Wrapper>
 				</body>
 			</AuthProvider>
