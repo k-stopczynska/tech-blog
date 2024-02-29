@@ -3,17 +3,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const Content = ({ desc, variant }: { desc: string; variant: string }) => {
-	const content =
-		variant === 'post'
-			? desc
-			: variant === 'featured'
-			? desc.substring(0, 400) + '...'
-			: desc.substring(0, 120) + '...';
+	let contentClass =
+		variant === 'post' ? 'post':
+			variant === 'featured'
+			? 'line-clamp-[12] post'
+			: 'line-clamp-3 post';
 	return (
 		<div
-			className='post'
+			className={contentClass}
 			dangerouslySetInnerHTML={{
-				__html: content,
+				__html: desc,
 			}}
 		></div>
 		// <div className='text-justify'>
