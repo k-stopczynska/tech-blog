@@ -9,7 +9,6 @@ import Pagination from '@/components/Pagination';
 import { UpdatedSearchParamsType, CardType } from '@/types';
 import { fetcher } from '@/utils/fetcher';
 
-
 const CardListScroller = ({ page, category }: UpdatedSearchParamsType) => {
 	const { data, mutate, isLoading } = useSWR(
 		`http://localhost:3000/api/posts?page=${page}&cat=${category || ''}`,
@@ -56,7 +55,7 @@ const CardListScroller = ({ page, category }: UpdatedSearchParamsType) => {
 			<div ref={triggerRef}>
 				<div
 					ref={sectionRef}
-					className='h-full w-[2300px] flex relative gap-[1rem] px-[2rem]'
+					className='w-[2300px] flex relative gap-[1rem] px-[2rem]'
 				>
 					{data?.posts?.map((card: CardType, index: number) => (
 						<Card {...card} key={index} />

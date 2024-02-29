@@ -3,7 +3,15 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import Button from '../UI/Button';
 
-const Pagination = ({ page, hasPrev, hasNext }: {page: number, hasPrev: boolean, hasNext: boolean}) => {
+const Pagination = ({
+	page,
+	hasPrev,
+	hasNext,
+}: {
+	page: number;
+	hasPrev: boolean;
+	hasNext: boolean;
+}) => {
 	const router = useRouter();
 	const handlePrev = () => {
 		router.push(`?page=${page - 1}`);
@@ -14,21 +22,17 @@ const Pagination = ({ page, hasPrev, hasNext }: {page: number, hasPrev: boolean,
 	};
 
 	return (
-		<div className=' flex justify-around items-center my-10'>
+		<div className=' flex justify-around items-center'>
 			<Button
-				url=''
 				title='previous'
 				variant='simpleButton'
-				source=''
 				onClick={handlePrev}
 				type='button'
 				disabled={!hasPrev}
 			/>
 			<Button
-				url=''
 				title='next'
 				variant='simpleButton'
-				source=''
 				onClick={handleNext}
 				type='button'
 				disabled={!hasNext}

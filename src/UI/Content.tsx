@@ -7,7 +7,7 @@ const Content = ({ desc, variant }: { desc: string; variant: string }) => {
 		variant === 'post' ? 'post':
 			variant === 'featured'
 			? 'line-clamp-[12] post'
-			: 'line-clamp-3 post';
+			: 'line-clamp-5 post';
 	return (
 		<div
 			className={contentClass}

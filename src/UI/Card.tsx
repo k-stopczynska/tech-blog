@@ -16,7 +16,7 @@ const Card = ({
 		<Link href={`/posts/${slug}`} className='container'>
 			<section className='card'>
 				<div className='image'>
-					<Image src={img} alt='' height={240} width={240} />
+					<Image src={img} alt='' width={240} height={180} />
 				</div>
 				<h2 className='title uppercase text-xl font-bold tracking-widest mb-2'>
 					{title}
