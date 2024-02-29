@@ -9,8 +9,7 @@ import useSWR from 'swr';
 import Card from '@/UI/Card';
 import PaginationComp from '@/components/Pagination';
 import { UpdatedSearchParamsType, CardType } from '@/types';
-import { fetcher } from '@/utils/fetcher'
-
+import { fetcher } from '@/utils/fetcher';
 
 const CardListSwiper = ({ page, category }: UpdatedSearchParamsType) => {
 	const { data, mutate, isLoading } = useSWR(
@@ -18,12 +17,9 @@ const CardListSwiper = ({ page, category }: UpdatedSearchParamsType) => {
 		fetcher,
 	);
 
-	console.log(data)
-
-		const POSTS_PER_PAGE = 7;
-		const hasPrev = POSTS_PER_PAGE * (+page - 1) > 0;
-		const hasNext =
-			POSTS_PER_PAGE * (+page - 1) + POSTS_PER_PAGE < data?.count;
+	const POSTS_PER_PAGE = 7;
+	const hasPrev = POSTS_PER_PAGE * (+page - 1) > 0;
+	const hasNext = POSTS_PER_PAGE * (+page - 1) + POSTS_PER_PAGE < data?.count;
 
 	return (
 		<section className='overflow-hidden py-10 border-y-2 border-secondary-200'>
@@ -51,14 +47,10 @@ const CardListSwiper = ({ page, category }: UpdatedSearchParamsType) => {
 					modules={[FreeMode, Pagination]}
 					className='w-full gap-6 h-[500px]'
 				>
-					{data?.posts?.map((card: CardType) => (
-						<SwiperSlide>
-							<div
-								className='flex flex-col gap-6 relative group w-full
-	h-[500px]'
-								key={card._id}
-							>
-								<Card {...card} key={card._id} />
+					{data?.posts?.map((card: CardType, index: number) => (
+						<SwiperSlide key={index}>
+							<div className='flex flex-col gap-6 relative group w-full h-[500px]'>
+								<Card {...card} />
 							</div>
 						</SwiperSlide>
 					))}

@@ -29,7 +29,6 @@ export type PostType = {
 type CardUpdateType = {
 	_id: string;
 	slug: string;
-	key: string;
 };
 
 export type UpdatedSearchParamsType = {

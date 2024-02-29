@@ -58,8 +58,8 @@ const CardListScroller = ({ page, category }: UpdatedSearchParamsType) => {
 					ref={sectionRef}
 					className='h-full w-[2300px] flex relative gap-[1rem] px-[2rem]'
 				>
-					{data?.posts?.map((card: CardType) => (
-						<Card {...card} key={card._id} />
+					{data?.posts?.map((card: CardType, index: number) => (
+						<Card {...card} key={index} />
 					))}
 				</div>
 			</div>

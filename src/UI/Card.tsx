@@ -11,10 +11,9 @@ const Card = ({
 	createdAt,
 	categorySlug,
 	slug,
-	key,
 }: CardType) => {
 	return (
-		<Link href={`/posts/${slug}`} className='container' key={key}>
+		<Link href={`/posts/${slug}`} className='container'>
 			<section className='card'>
 				<div className='image'>
 					<Image src={img} alt='' height={240} width={240} />
