@@ -6,7 +6,9 @@ import Loader from './Loader';
 
 const getPosts = async (page: number, category: any) => {
 	const response = await fetch(
-		`http://localhost:3000/api/posts?page=${page}&cat=${category || ''}`,
+		`https://ainspiring.netlify.app/api/posts?page=${page}&cat=${
+			category || ''
+		}`,
 		{
 			cache: 'no-store',
 		},

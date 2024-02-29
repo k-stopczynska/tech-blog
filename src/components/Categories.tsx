@@ -3,9 +3,12 @@ import Category from '@/UI/Category';
 import { CategoryType } from '@/types';
 
 const getCategories = async () => {
-	const response = await fetch('http://localhost:3000/api/categories', {
-		cache: 'no-store',
-	});
+	const response = await fetch(
+		'https://ainspiring.netlify.app/api/categories',
+		{
+			cache: 'no-store',
+		},
+	);
 	if (!response.ok) {
 		throw new Error('Loading categories failed...');
 	}

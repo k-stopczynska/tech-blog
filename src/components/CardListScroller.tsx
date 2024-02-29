@@ -12,7 +12,9 @@ import { fetcher } from '@/utils/fetcher';
 
 const CardListScroller = ({ page, category }: UpdatedSearchParamsType) => {
 	const { data, mutate, isLoading } = useSWR(
-		`http://localhost:3000/api/posts?page=${page}&cat=${category || ''}`,
+		`https://ainspiring.netlify.app/api/posts?page=${page}&cat=${
+			category || ''
+		}`,
 		fetcher,
 	);
 

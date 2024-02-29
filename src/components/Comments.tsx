@@ -10,7 +10,7 @@ import { fetcher } from '@/utils/fetcher';
 
 const Comments = ({ postSlug }: { postSlug: string }) => {
 	const { data, mutate, isLoading } = useSWR(
-		`http://localhost:3000/api/comments?postSlug=${postSlug}`,
+		`https://ainspiring.netlify.app/api/comments?postSlug=${postSlug}`,
 		fetcher,
 	);
 
