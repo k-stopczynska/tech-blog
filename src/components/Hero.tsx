@@ -8,8 +8,8 @@ const Hero = () => {
 		<section className='w-full h-full flex flex-col'>
 			<Heading />
 			<section className='flex flex-col lg:flex-row items-center justify-between gap-6 my-10'>
-				{/* <Featured />
-				<Categories /> */}
+				{/* <Featured /> */}
+				<Categories />
 			</section>
 		</section>
 	);

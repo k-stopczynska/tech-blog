@@ -5,21 +5,15 @@ import Content from '@/UI/Content';
 import Loader from './Loader';
 
 const getPosts = async (page: number, category: any) => {
-	try {
-		const response = await fetch(
-			`https://ainspiring.netlify.app/api/posts?page=${page}&cat=${
-				category || ''
-			}`,
-		);
-		if (!response.ok) {
-			throw new Error('Loading posts failed...');
-		}
-		return response.json();
-	} catch (error: any) {
-		if (process.env.NODE_ENV === 'production') {
-			console.error('An error occurred:', error.digest);
-		}
+	const response = await fetch(
+		`https://ainspiring.netlify.app/api/posts?page=${page}&cat=${
+			category || ''
+		}`,
+	);
+	if (!response.ok) {
+		throw new Error('Loading posts failed...');
 	}
+	return response.json();
 };
 
 const Featured = async () => {
