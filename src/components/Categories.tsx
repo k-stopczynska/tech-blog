@@ -3,19 +3,13 @@ import Category from '@/UI/Category';
 import { CategoryType } from '@/types';
 
 const getCategories = async () => {
-	try {
-		const response = await fetch(
-			'https://ainspiring.netlify.app/api/categories',
-		);
-		if (!response.ok) {
-			throw new Error('Loading categories failed...');
-		}
-		return response.json();
-	} catch (error: any) {
-		if (process.env.NODE_ENV === 'production') {
-			console.error('An error occurred:', error.digest);
-		}
+	const response = await fetch(
+		'https://ainspiring.netlify.app/api/categories',
+	);
+	if (!response.ok) {
+		throw new Error('Loading categories failed...');
 	}
+	return response.json();
 };
 
 const Categories = async () => {
