@@ -7,7 +7,6 @@ export const GET = async (req: any) => {
 	const POSTS_PER_PAGE = 7;
 	const page = searchParams.get('page') || '1';
 	const cat = searchParams.get('cat');
-	console.log('category', cat);
 	const query = {
 		take: POSTS_PER_PAGE,
 		skip: POSTS_PER_PAGE * (parseInt(page) - 1),
