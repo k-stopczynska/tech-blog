@@ -15,7 +15,8 @@ const ContactLink = forwardRef<HTMLAnchorElement, ContactLinkProps>(
 			<a
 				href={href}
 				ref={ref}
-				className={`absolute w-[${size}px] h-[${size}px] top-[-50%] left-[50%] bg-${color} rounded-full`}
+				target='_blank'
+				className={`absolute w-[${size}px] h-[${size}px] top-[-50%] left-[50%] bg-${color} p-2 rounded-full`}
 			>
 				<Image src={src} alt={alt} width={size} height={size} />
 			</a>

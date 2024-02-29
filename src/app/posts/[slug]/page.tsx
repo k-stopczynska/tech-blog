@@ -6,7 +6,9 @@ import Comments from '@/components/Comments';
 import { PostType } from '@/types';
 
 const getPost = async (slug: string): Promise<PostType> => {
-	const response = await fetch(`http://localhost:3000/api/posts/${slug}`);
+	const response = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+		cache: 'no-store',
+	});
 	if (!response.ok) {
 		throw new Error('fetching this post failed, try again');
 	}
