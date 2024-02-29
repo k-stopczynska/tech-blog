@@ -4,7 +4,7 @@
 @tailwind utilities;
 @tailwind variants;
 
-.link, a {
+.link, .post a {
 	@apply text-secondary-100 font-semibold px-6 py-3 rounded hover:text-light-100 transition;
 }
 
