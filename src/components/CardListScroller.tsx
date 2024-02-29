@@ -6,6 +6,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Card from '@/UI/Card';
 import Pagination from '@/components/Pagination';
+import Loader from './Loader';
 import { UpdatedSearchParamsType, CardType } from '@/types';
 import { fetcher } from '@/utils/fetcher';
 
@@ -50,20 +51,23 @@ const CardListScroller = ({ page, category }: UpdatedSearchParamsType) => {
 	}, []);
 
 	return (
-		<section className='overflow-hidden py-10 border-y-2 border-secondary-200'>
-			<h3 className='text-lg md:text-2xl font-bold mb-20'>Posts</h3>
-			<div ref={triggerRef}>
-				<div
-					ref={sectionRef}
-					className='w-[2300px] flex relative gap-[1rem] px-[2rem]'
-				>
-					{data?.posts?.map((card: CardType, index: number) => (
-						<Card {...card} key={index} />
-					))}
+		<>
+			{isLoading && <Loader />}
+			<section className='overflow-hidden py-10 border-y-2 border-secondary-200'>
+				<h3 className='text-lg md:text-2xl font-bold mb-20'>Posts</h3>
+				<div ref={triggerRef}>
+					<div
+						ref={sectionRef}
+						className='w-[2300px] flex relative gap-[1rem] px-[2rem]'
+					>
+						{data?.posts?.map((card: CardType, index: number) => (
+							<Card {...card} key={index} />
+						))}
+					</div>
 				</div>
-			</div>
-			<Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
-		</section>
+				<Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
+			</section>
+		</>
 	);
 };
 
