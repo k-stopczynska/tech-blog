@@ -6,6 +6,9 @@ import Content from '@/UI/Content';
 const getPosts = async (page: number, category: any) => {
 	const response = await fetch(
 		`http://localhost:3000/api/posts?page=${page}&cat=${category || ''}`,
+		{
+			cache: 'no-store',
+		},
 	);
 	if (!response.ok) {
 		throw new Error('Loading posts failed...');
@@ -14,7 +17,7 @@ const getPosts = async (page: number, category: any) => {
 };
 
 const Featured = async () => {
-	const { posts } = await getPosts(1, 'places');
+	const { posts } = await getPosts(1, '');
 	const { title, desc, img, slug } = posts[0];
 
 	return (
