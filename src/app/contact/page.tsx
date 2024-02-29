@@ -16,40 +16,40 @@ const ContactPage = () => {
 			duration: 2.5,
 			delay: 0.5,
 			ease: 'bounce.out',
-			x: 0,
-			y: 450,
+			x: 30,
+			y: 290,
 		});
 		const instagram = gsap.to(instagramRef.current, {
 			rotation: 360,
 			duration: 2.2,
 			delay: 1,
 			ease: 'steps(72)',
-			x: -150,
-			y: 800,
+			x: -120,
+			y: 540,
 		});
 		const linkedin = gsap.to(linkedinRef.current, {
 			rotation: 360,
 			duration: 1.5,
 			delay: 1,
 			ease: 'bounce.out',
-			x: -225,
-			y: 550,
+			x: -175,
+			y: 340,
 		});
 		const facebook = gsap.to(facebookRef.current, {
 			rotation: 360,
 			duration: 1.5,
 			delay: 1.5,
 			ease: 'bounce.out',
-			x: 100,
-			y: 800,
+			x: 50,
+			y: 640,
 		});
 		const github = gsap.to(githubRef.current, {
 			rotation: 360,
 			duration: 2.5,
 			delay: 0,
 			ease: 'steps(36)',
-			x: 200,
-			y: 600,
+			x: 30,
+			y: 440,
 		});
 		return () => {
 			email.kill();
@@ -60,7 +60,7 @@ const ContactPage = () => {
 		};
 	}, []);
 	return (
-		<section className='relative w-full h-[80vh] link-container'>
+		<section className='relative w-full top-[-200px]'>
 			<ContactLink
 				href='mailto: k.stopczynska@gmail.com'
 				ref={emailRef}
