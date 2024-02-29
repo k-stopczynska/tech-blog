@@ -1,9 +1,8 @@
 import { getAuthSession } from '@/utils/auth';
 import prisma from '@/utils/connect';
 import { NextResponse } from 'next/server';
-import { NextApiRequest } from 'next';
 
-export const GET = async (req: NextApiRequest) => {
+export const GET = async (req: any) => {
 	const { searchParams } = new URL(req.url!);
 
 	const postSlug = searchParams.get('postSlug');
@@ -23,7 +22,7 @@ export const GET = async (req: NextApiRequest) => {
 		);
 	}
 };
-// TODO: find proper req type to use json method
+
 export const POST = async (req: any) => {
 	const session = await getAuthSession();
 	if (!session) {

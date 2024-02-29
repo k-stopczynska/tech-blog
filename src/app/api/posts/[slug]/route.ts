@@ -1,8 +1,7 @@
 import prisma from '@/utils/connect';
 import { NextResponse } from 'next/server';
-import { NextApiRequest } from 'next';
 
-export const GET = async (req: NextApiRequest, { params }: any) => {
+export const GET = async (req: any, { params }: any) => {
 	const { slug } = params;
 	try {
 		const post = await prisma.post.update({

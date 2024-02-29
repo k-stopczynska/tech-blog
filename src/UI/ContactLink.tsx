@@ -24,4 +24,6 @@ const ContactLink = forwardRef<HTMLAnchorElement, ContactLinkProps>(
 	},
 );
 
+ContactLink.displayName = 'ContactLink';
+
 export default ContactLink;
