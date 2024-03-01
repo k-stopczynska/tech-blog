@@ -4,7 +4,8 @@
 @tailwind utilities;
 @tailwind variants;
 
-.link, .post a {
+.link,
+.post a {
 	@apply text-secondary-100 font-semibold px-6 py-3 rounded hover:text-light-100 transition;
 }
 
@@ -13,11 +14,11 @@
 }
 
 .post h2 {
-	@apply text-slate-300 text-2xl font-semibold underline pt-6 pb-1;
+	@apply text-slate-300 text-2xl font-semibold underline pt-6 pb-1 text-left;
 }
 
 .post h3 {
-	@apply text-slate-100 text-lg font-semibold pt-4 pb-1;
+	@apply text-slate-100 text-lg font-semibold pt-4 pb-1 text-left;
 }
 
 .post img {
@@ -25,7 +26,7 @@
 }
 
 .post ul {
-	@apply list-disc ml-4;
+	@apply list-disc ml-4 space-y-2;
 }
 
 @keyframes blink {
