@@ -18,10 +18,10 @@ const Card = ({
 				<div className='image'>
 					<Image src={img} alt='' width={240} height={180} />
 				</div>
-				<h2 className='title uppercase text-xl font-bold tracking-widest mb-2'>
+				<h2 className='title uppercase text-xl font-bold tracking-widest mb-6'>
 					{title}
 				</h2>
-				<div className='flex justify-between title text-secondary-100'>
+				<div className='flex justify-between title text-secondary-100 w-full'>
 					<p>{createdAt.toLocaleString()?.split('T')[0]}</p>
 					<span>{categorySlug}</span>
 				</div>
