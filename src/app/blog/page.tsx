@@ -13,7 +13,7 @@ export default function BlogPage({
 	return (
 		<div>
 			<h1 className='text-4xl font-bold text-center mt-20 mb-10 capitalize'>
-				{category ? 'Category from page' : 'Blog'}
+				{category ? `${category}` : 'Blog'}
 			</h1>
 			<CardGrid page={page} category={category} />
 		</div>
