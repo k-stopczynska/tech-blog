@@ -25,7 +25,7 @@ const CardGrid = async ({ page, category }: UpdatedSearchParamsType) => {
 	return (
 		<>
 			<h1 className='text-4xl font-bold text-center mt-20 mb-10 capitalize'>
-				{category ? category.title : 'Blog'}
+				{category ? 'Category from grid' : 'Blog'}
 			</h1>
 			<Suspense fallback={<Loader />}>
 				<div className='flex flex-wrap justify-center w-full md:justify-between gap-10 mt-20'>

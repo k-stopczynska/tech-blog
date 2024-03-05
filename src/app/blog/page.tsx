@@ -9,13 +9,11 @@ export default function BlogPage({
 }) {
 	const page = parseInt(searchParams.page) || 1;
 	const { category } = searchParams;
-	console.log(category);
-	console.log(searchParams.category);
 
 	return (
 		<div>
 			<h1 className='text-4xl font-bold text-center mt-20 mb-10 capitalize'>
-				{category ? category.title : 'Blog'}
+				{category ? 'Category from page' : 'Blog'}
 			</h1>
 			<CardGrid page={page} category={category} />
 		</div>
