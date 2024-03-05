@@ -54,7 +54,7 @@ const CardListSwiper = ({ page, category }: UpdatedSearchParamsType) => {
 					>
 						{data?.posts?.map((card: CardType, index: number) => (
 							<SwiperSlide key={index}>
-								<div className='flex flex-col gap-6 relative group w-full h-[400px]'>
+								<div className='flex flex-col gap-6 relative group w-full h-[410px]'>
 									<Card {...card} />
 								</div>
 							</SwiperSlide>
