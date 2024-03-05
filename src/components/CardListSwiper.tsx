@@ -7,7 +7,6 @@ import 'swiper/css/free-mode';
 import { FreeMode, Pagination } from 'swiper/modules';
 import useSWR from 'swr';
 import Card from '@/UI/Card';
-import PaginationComp from '@/components/Pagination';
 import Loader from './Loader';
 import { UpdatedSearchParamsType, CardType } from '@/types';
 import { fetcher } from '@/utils/fetcher';
@@ -17,10 +16,6 @@ const CardListSwiper = ({ page, category }: UpdatedSearchParamsType) => {
 		`https://ainspiring.netlify.app/api/posts?page=1&cat=${category || ''}`,
 		fetcher,
 	);
-
-	// const POSTS_PER_PAGE = 7;
-	// const hasPrev = POSTS_PER_PAGE * (+page - 1) > 0;
-	// const hasNext = POSTS_PER_PAGE * (+page - 1) + POSTS_PER_PAGE < data?.count;
 
 	return (
 		<>
@@ -59,11 +54,6 @@ const CardListSwiper = ({ page, category }: UpdatedSearchParamsType) => {
 						))}
 					</Swiper>
 				</div>
-				{/* <PaginationComp
-					page={page}
-					hasPrev={hasPrev}
-					hasNext={hasNext}
-				/> */}
 			</section>
 		</>
 	);
