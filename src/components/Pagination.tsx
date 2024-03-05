@@ -22,7 +22,7 @@ const Pagination = ({
 	};
 
 	return (
-		<div className=' flex justify-around items-center'>
+		<div className=' flex justify-around items-center my-6'>
 			<Button
 				title='previous'
 				variant='simpleButton'
