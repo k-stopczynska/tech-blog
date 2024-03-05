@@ -9,6 +9,7 @@ export default function BlogPage({
 }) {
 	const page = parseInt(searchParams.page) || 1;
 	const { category } = searchParams;
+	console.log(category);
 
 	return (
 		<div>
