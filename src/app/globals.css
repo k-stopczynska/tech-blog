@@ -105,8 +105,8 @@
 } */
 
 .container {
-	width: fit-content;
-	height: fit-content;
+	width: min-content;
+	height: 400px;
 }
 
 .card {
