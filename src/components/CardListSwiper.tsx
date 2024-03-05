@@ -21,7 +21,7 @@ const CardListSwiper = ({ page, category }: UpdatedSearchParamsType) => {
 		<>
 			{isLoading && <Loader />}
 			<section className='overflow-hidden py-10 border-y-2 border-secondary-200'>
-				<h3 className='text-lg md:text-2xl font-bold mb-20'>Posts</h3>
+				<h3 className='text-lg md:text-2xl font-bold mb-20'>Latest Posts</h3>
 				<div className='flex items-center justify-center flex-col gap-6 h-[100%] w-full '>
 					<Swiper
 						breakpoints={{
