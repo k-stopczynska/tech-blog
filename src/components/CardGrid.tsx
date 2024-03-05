@@ -26,7 +26,7 @@ const CardGrid = async ({ page, category }: UpdatedSearchParamsType) => {
 		<>
 			<h3 className='text-lg md:text-2xl font-bold mb-4'>Posty</h3>
 			<Suspense fallback={<Loader />}>
-				<div className='flex flex-wrap justify-center w-full md:justify-between gap-10 mt-10'>
+				<div className='flex flex-wrap justify-center w-full md:justify-between gap-10 mt-20'>
 					{posts?.map((card: CardType) => (
 						<Card {...card} key={card._id} />
 					))}
