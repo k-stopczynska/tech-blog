@@ -92,18 +92,6 @@
 	box-shadow: 0 5px 20px #725ac1 inset, 0px 0 10px 2px #725ac1;
 }
 
-/* .container {
-	position: relative;
-	width: 100%;
-	height: 600px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	padding: 10px;
-	cursor: pointer;
-} */
-
 .container {
 	position: relative;
 	flex-wrap: wrap;
@@ -177,6 +165,7 @@
 	position: absolute;
 	text-align: center;
 	bottom: 4px;
+	width: 90%;
 	transition: 0.3s ease-in-out;
 }
 

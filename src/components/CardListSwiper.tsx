@@ -14,15 +14,13 @@ import { fetcher } from '@/utils/fetcher';
 
 const CardListSwiper = ({ page, category }: UpdatedSearchParamsType) => {
 	const { data, mutate, isLoading } = useSWR(
-		`https://ainspiring.netlify.app/api/posts?page=${page}&cat=${
-			category || ''
-		}`,
+		`https://ainspiring.netlify.app/api/posts?page=1&cat=${category || ''}`,
 		fetcher,
 	);
 
-	const POSTS_PER_PAGE = 7;
-	const hasPrev = POSTS_PER_PAGE * (+page - 1) > 0;
-	const hasNext = POSTS_PER_PAGE * (+page - 1) + POSTS_PER_PAGE < data?.count;
+	// const POSTS_PER_PAGE = 7;
+	// const hasPrev = POSTS_PER_PAGE * (+page - 1) > 0;
+	// const hasNext = POSTS_PER_PAGE * (+page - 1) + POSTS_PER_PAGE < data?.count;
 
 	return (
 		<>
@@ -61,11 +59,11 @@ const CardListSwiper = ({ page, category }: UpdatedSearchParamsType) => {
 						))}
 					</Swiper>
 				</div>
-				<PaginationComp
+				{/* <PaginationComp
 					page={page}
 					hasPrev={hasPrev}
 					hasNext={hasNext}
-				/>
+				/> */}
 			</section>
 		</>
 	);

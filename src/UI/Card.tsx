@@ -21,7 +21,7 @@ const Card = ({
 				<h2 className='title uppercase text-xl font-bold tracking-widest mb-6'>
 					{title}
 				</h2>
-				<div className='flex justify-between title text-secondary-100 w-full'>
+				<div className='flex justify-between title text-secondary-100'>
 					<p>{createdAt.toLocaleString()?.split('T')[0]}</p>
 					<span>{categorySlug}</span>
 				</div>

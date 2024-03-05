@@ -12,15 +12,15 @@ import { fetcher } from '@/utils/fetcher';
 
 const CardListScroller = ({ page, category }: UpdatedSearchParamsType) => {
 	const { data, mutate, isLoading } = useSWR(
-		`https://ainspiring.netlify.app/api/posts?page=${page}&cat=${
+		`https://ainspiring.netlify.app/api/posts?page=1&cat=${
 			category || ''
 		}`,
 		fetcher,
 	);
 
-	const POSTS_PER_PAGE = 7;
-	const hasPrev = POSTS_PER_PAGE * (+page - 1) > 0;
-	const hasNext = POSTS_PER_PAGE * (+page - 1) + POSTS_PER_PAGE < data?.count;
+	// const POSTS_PER_PAGE = 7;
+	// const hasPrev = POSTS_PER_PAGE * (+page - 1) > 0;
+	// const hasNext = POSTS_PER_PAGE * (+page - 1) + POSTS_PER_PAGE < data?.count;
 
 	const sectionRef = useRef(null);
 	const triggerRef = useRef(null);
@@ -56,7 +56,7 @@ const CardListScroller = ({ page, category }: UpdatedSearchParamsType) => {
 		<>
 			{isLoading && <Loader />}
 			<section className='overflow-hidden py-10 border-y-2 border-secondary-200'>
-				<h3 className='text-lg md:text-2xl font-bold mb-20'>Posts</h3>
+				<h3 className='text-lg md:text-2xl font-bold mb-20'>Latests Posts</h3>
 				<div ref={triggerRef}>
 					<div
 						ref={sectionRef}
@@ -67,7 +67,7 @@ const CardListScroller = ({ page, category }: UpdatedSearchParamsType) => {
 						))}
 					</div>
 				</div>
-				<Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
+				{/* <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} /> */}
 			</section>
 		</>
 	);
