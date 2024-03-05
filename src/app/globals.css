@@ -107,8 +107,8 @@
 .container {
 	position: relative;
 	flex-wrap: wrap;
-	width: 300px;
-	height: 370px;
+	width: 310px;
+	height: 400px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
