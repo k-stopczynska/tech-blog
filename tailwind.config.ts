@@ -21,6 +21,10 @@ module.exports = {
 				'secondary-100': '#fe5d9f',
 				'secondary-200': '#725ac1',
 			},
+			boxShadow: {
+				custom: '0 0px 60px 5px #fe5d9f',
+				hover: '0 0px 60px 20px #fe5d9f',
+			},
 		},
 		plugins: [],
 	},
