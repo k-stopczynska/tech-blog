@@ -5,24 +5,14 @@ import MainScene from '@/components/MainScene';
 
 const AboutPage = () => {
 	return (
-		// <div className= 'w-full h-[800px] border-none'>
-		// 	<MainScene/>
-		// </div>
-		<div className='min-h-[600px] w-full relative object-cover'>
-			<Image
-				src='/door.jpg'
-				alt='not-found page'
-				className='absolute top-[8rem] md:top-24 left-0 hue-rotate-75'
-				height={600}
-				width={1200}
-			/>
-			<div className='absolute top-6 left-0 flex flex-col items-center justify-center w-full h-20 gap-4 md:flex-row md:top-2'>
-				<h1>Page under construction</h1>
-				<Link href='/' className='shadow text-center rounded py-3 px-6'>
-					go back...
-				</Link>
+		<>
+			<div className='relative object-cover w-full top-[8rem] left-[50%] translate-x-[-50%] md:top-24'>
+				<img src='/imaginary_room2.jpg' alt='pixel art room image' />
+				<div className='absolute w-full h-full border-4 border-red-900 top-0 left-0'>
+					<div className='relative w-[21%] h-[15%] top-[23%] left-[13%] border-4 border-secondary-100'></div>
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 
