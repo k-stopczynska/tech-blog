@@ -8,7 +8,7 @@ const AboutPage = () => {
 		<>
 			<div className='relative object-cover w-full top-[8rem] left-[50%] translate-x-[-50%] md:top-24'>
 				<img src='/imaginary_room2.jpg' alt='pixel art room image' />
-				<div className='absolute w-full h-full xl:w-[96.5%] border-4 border-red-900 top-0 left-0'>
+				<div className='absolute w-full h-full xl:w-[96.5%] top-0 left-0'>
 					<div
 						role='anchor'
 						className='relative w-[20%] h-[15%] top-[23%] left-[13.5%] cursor-pointer shadow-custom transition-all hover:shadow-hover focus:shadow-hover '
