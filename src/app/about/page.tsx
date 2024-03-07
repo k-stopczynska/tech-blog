@@ -21,7 +21,7 @@ const AboutPage = () => {
 							className='absolute top-0 bottom-0 left-0 right-0'
 						></a>
 					</div>
-					<a className='relative w-[21%] h-[28%] top-[27%] left-[13%] rounded-[3.5rem] cursor-pointer  shadow-custom hover:shadow-hover focus:shadow-hover'></a>
+					<div className='relative w-[21%] h-[28%] top-[27%] left-[13%] rounded-[3.5rem] cursor-pointer  shadow-custom hover:shadow-hover focus:shadow-hover'></div>
 					<div className='relative w-[23%] h-[7%] top-[9%] left-[57%] cursor-pointer shadow-custom hover:shadow-hover focus:shadow-hover'></div>
 				</div>
 			</div>
