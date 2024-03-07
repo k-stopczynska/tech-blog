@@ -1,10 +1,12 @@
 import './globals.css';
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Wrapper from '@/UI/Wrapper';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Modal from '@/UI/Modal';
 import AuthProvider from '@/providers/AuthProvider';
+import Loader from '@/components/Loader';
 
 export const metadata: Metadata = {
 	title: 'A_in_spiring',
@@ -24,7 +26,9 @@ export default function RootLayout({
 						<Navbar />
 						<main>{children}</main>
 						{/* <Footer /> */}
-						<Modal />
+						<Suspense fallback={<Loader />}>
+							<Modal />
+						</Suspense>
 					</Wrapper>
 				</body>
 			</AuthProvider>
