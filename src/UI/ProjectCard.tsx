@@ -17,7 +17,7 @@ const ProjectCard = ({
 }: ProjectCard) => {
 	return (
 		<li
-			className='flex justify-between items-center pt-6 text-lg'
+			className='flex justify-between items-center py-6 text-lg cursor-pointer'
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
 			onFocus={onFocus}
