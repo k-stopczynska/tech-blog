@@ -35,7 +35,7 @@ const CardListScroller = ({ page, category }: UpdatedSearchParamsType) => {
 				scrollTrigger: {
 					trigger: triggerRef.current,
 					start: '-280 top',
-					end: '1500 top',
+					end: '1300 top',
 					scrub: 0.6,
 					pin: true,
 				},
