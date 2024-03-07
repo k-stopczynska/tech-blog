@@ -33,9 +33,11 @@ const AboutPage = () => {
 						</a>
 					</div>
 					<div className='relative w-[23%] h-[7%] top-[9%] left-[57%] cursor-pointer transition-all shadow-custom hover:shadow-hover focus:shadow-hover'>
-						<button className='absolute top-0 bottom-0 left-0 right-0 text-center opacity-0 transition-opacity hover:opacity-100'>
-							click to see tech-stack
-						</button>
+						<Link href='?modal=true'>
+							<button className='absolute top-0 bottom-0 left-0 right-0 text-center opacity-0 transition-opacity hover:opacity-100'>
+								click to see tech-stack
+							</button>
+						</Link>
 					</div>
 				</div>
 			</div>

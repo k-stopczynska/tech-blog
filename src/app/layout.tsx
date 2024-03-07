@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Wrapper from '@/UI/Wrapper';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Modal from '@/UI/Modal';
 import AuthProvider from '@/providers/AuthProvider';
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({
 						<Navbar />
 						<main>{children}</main>
 						{/* <Footer /> */}
+						<Modal />
 					</Wrapper>
 				</body>
 			</AuthProvider>
