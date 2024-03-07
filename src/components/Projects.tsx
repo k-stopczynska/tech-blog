@@ -52,7 +52,7 @@ const Projects = () => {
 				/>
 			</div>
 			<div className='flex-1'>
-				<h2>Projects</h2>
+				<h2 className='text-6xl font-extrabold'>Projects</h2>
 				<ul className='divide-y-2 divide-light-100'>
 					{projects.map(
 						(project: { title: string; img: string }, index) => (
