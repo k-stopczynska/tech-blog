@@ -9,15 +9,14 @@ interface ProjectCard {
 const ProjectCard = ({ title, onMouseEnter, onFocus }: ProjectCard) => {
 	return (
 		<li
-			className=' py-6 text-xl cursor-pointer hover:font-bold focus:font-bold transition'
+			className='relative py-6 text-xl cursor-pointer transition group'
 			onMouseEnter={onMouseEnter}
 			onFocus={onFocus}
 		>
-			<span className='before:absolute before:w-[30px] before:h-[30px] before:bg-red-900'></span>
-			<div className='flex justify-between'>
-				<span>{title}</span>
-				<span>{title}</span>
-			</div>
+			<span className='before:w-[30px] before:h-[30px] before:bg-secondary-100 before:rounded-full before:absolute before:left-0 before:opacity-0 before:group-hover:opacity-100 transition'></span>
+			<p className='group-hover:font-bold group-focus:font-bold group-hover:text-secondary-100 group-focus:text-secondary-100 group-hover:translate-x-10 group-focus:translate-x-10 transition'>
+				{title}
+			</p>
 		</li>
 	);
 };
