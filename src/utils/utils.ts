@@ -3,15 +3,7 @@ export const projects = [
 		title: 'codegroove',
 		img: '/city.jpg',
 		content: 'VSCode extension for tracking and analyzing coding time',
-		stack: [
-			'typescript',
-			'chart.js',
-			'csv-parser',
-			'yeoman',
-			'vsce',
-			'mocha',
-			'chai',
-		],
+		stack: ['typescript', 'chart.js', 'csv-parser', 'mocha', 'chai'],
 		links: { github: 'something', marketplace: 'another' },
 	},
 	{
