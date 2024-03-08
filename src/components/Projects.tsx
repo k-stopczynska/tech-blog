@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import ProjectCard from '@/UI/ProjectCard';
 import { projects } from '@/utils/utils';
 
@@ -30,7 +31,7 @@ const Projects = () => {
 						<div key={index} className='relative'>
 							<img
 								src={project.img}
-								className={`absolute bottom-0 ${
+								className={`absolute bottom-0 rounded ${
 									index === hoveredProject
 										? 'img-fade-in'
 										: 'img-fade-out'
@@ -41,7 +42,7 @@ const Projects = () => {
 								alt={`project image ${index}`}
 							/>
 							<div
-								className={`absolute top-0 w-full h-[200px] mt-6 bg-black ${
+								className={`absolute top-0 w-full h-[250px] mt-6 rounded border border-light-100 p-4 flex flex-col justify-between ${
 									index === hoveredProject
 										? 'img-fade-in'
 										: 'img-fade-out'
@@ -52,14 +53,23 @@ const Projects = () => {
 							>
 								<h3>{project.title}</h3>
 								<p>{project.content}</p>
-								{project.stack.map((stack) => (
-									<div>{stack}</div>
-								))}
-								{Object.values(project.links).map(
-									(link: any) => (
-										<div>{link}</div>
-									),
-								)}
+								<div className='flex justify-between items-center'>
+									{project.stack.map((stack) => (
+										<div>{stack}</div>
+									))}
+								</div>
+								<div className='flex justify-between items-center'>
+									{Object.entries(project.links).map(
+										(link: any) => (
+											<Link
+												href={link[1]}
+												className='shadow text-center rounded py-3 px-6'
+											>
+												{link[0]}
+											</Link>
+										),
+									)}
+								</div>
 							</div>
 						</div>
 					),
@@ -67,7 +77,7 @@ const Projects = () => {
 			</div>
 			<div className='flex-1'>
 				<h2 className='text-6xl font-extrabold'>Projects</h2>
-				<ul className='divide-y-2 divide-light-100'>
+				<ul className='divide-y divide-light-100'>
 					{projects.map(
 						(project: { title: string; img: string }, index) => (
 							<ProjectCard
