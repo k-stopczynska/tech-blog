@@ -51,7 +51,9 @@ const Projects = () => {
 									opacity: index === hoveredProject ? 1 : 0,
 								}}
 							>
-								<h3>{project.title}</h3>
+								<h3 className='text-2xl font-bold tracking-widest'>
+									{project.title}
+								</h3>
 								<p>{project.content}</p>
 								<div className='flex justify-between items-center'>
 									{project.stack.map((stack) => (
@@ -63,7 +65,7 @@ const Projects = () => {
 										(link: any) => (
 											<Link
 												href={link[1]}
-												className='shadow text-center rounded py-3 px-6'
+												className='shadow text-center rounded py-2 px-4'
 											>
 												{link[0]}
 											</Link>
