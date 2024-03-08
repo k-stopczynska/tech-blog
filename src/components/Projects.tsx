@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 import ProjectCard from '@/UI/ProjectCard';
-
-const projects = [
-	{ title: 'codegroove', img: '/city.jpg' },
-	{ title: 'code quest', img: '/coder.jpg' },
-	{ title: 'invoices', img: '/hard.jpg' },
-	{ title: 'recruitment bot', img: '/imaginary_room2.jpg' },
-	{ title: 'roulette', img: '/games.jpg' },
-	{ title: 'vetcenter', img: '/door.jpg' },
-];
+import { projects } from '@/utils/utils';
 
 const Projects = () => {
 	const [hoveredProject, setHoveredProject] = useState<number | null>(null);
@@ -25,20 +17,51 @@ const Projects = () => {
 		<div className='flex items-center justify-between gap-8 min-w-[800px] min-h-[600px]'>
 			<div className='relative flex-1 min-w-[350px]'>
 				{projects.map(
-					(project: { title: string; img: string }, index) => (
-						<img
-							key={index}
-							src={project.img}
-							className={`absolute top-[50%] translate-y-[-50%] ${
-								index === hoveredProject
-									? 'img-fade-in'
-									: 'img-fade-out'
-							}`}
-							style={{
-								opacity: index === hoveredProject ? 1 : 0,
-							}}
-							alt={`project image ${index}`}
-						/>
+					(
+						project: {
+							title: string;
+							img: string;
+							content: string;
+							stack: string[];
+							links: any;
+						},
+						index,
+					) => (
+						<div key={index} className='relative'>
+							<img
+								src={project.img}
+								className={`absolute bottom-0 ${
+									index === hoveredProject
+										? 'img-fade-in'
+										: 'img-fade-out'
+								}`}
+								style={{
+									opacity: index === hoveredProject ? 1 : 0,
+								}}
+								alt={`project image ${index}`}
+							/>
+							<div
+								className={`absolute top-0 w-full h-[200px] mt-6 bg-black ${
+									index === hoveredProject
+										? 'img-fade-in'
+										: 'img-fade-out'
+								}`}
+								style={{
+									opacity: index === hoveredProject ? 1 : 0,
+								}}
+							>
+								<h3>{project.title}</h3>
+								<p>{project.content}</p>
+								{project.stack.map((stack) => (
+									<div>{stack}</div>
+								))}
+								{Object.values(project.links).map(
+									(link: any) => (
+										<div>{link}</div>
+									),
+								)}
+							</div>
+						</div>
 					),
 				)}
 			</div>
@@ -48,10 +71,10 @@ const Projects = () => {
 					{projects.map(
 						(project: { title: string; img: string }, index) => (
 							<ProjectCard
-                                key={index}
-                                {...project}
-                                onMouseEnter={() => handleMouseEnter(index)}
-                                onFocus={() => handleFocus(index)}
+								key={index}
+								{...project}
+								onMouseEnter={() => handleMouseEnter(index)}
+								onFocus={() => handleFocus(index)}
 							/>
 						),
 					)}
