@@ -3,16 +3,10 @@ import React from 'react';
 interface ProjectCard {
 	title: string;
 	onMouseEnter: (event: any) => void;
-
 	onFocus: (event: any) => void;
 }
 
-const ProjectCard = ({
-	title,
-	onMouseEnter,
-
-	onFocus,
-}: ProjectCard) => {
+const ProjectCard = ({ title, onMouseEnter, onFocus }: ProjectCard) => {
 	return (
 		<li
 			className=' py-6 text-xl cursor-pointer hover:font-bold focus:font-bold transition'

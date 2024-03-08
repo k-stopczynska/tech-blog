@@ -48,12 +48,10 @@ const Projects = () => {
 					{projects.map(
 						(project: { title: string; img: string }, index) => (
 							<ProjectCard
-								key={index}
-								{...project}
-								onMouseEnter={() => handleMouseEnter(index)}
-								
-								onFocus={() => handleFocus(index)}
-							
+                                key={index}
+                                {...project}
+                                onMouseEnter={() => handleMouseEnter(index)}
+                                onFocus={() => handleFocus(index)}
 							/>
 						),
 					)}
