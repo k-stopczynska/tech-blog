@@ -29,30 +29,6 @@
 	@apply list-disc ml-4 space-y-2;
 }
 
-@keyframes fade-in {
-	0% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 0.5;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes fade-out {
-	0% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0.5;
-	}
-	100% {
-		opacity: 0;
-	}
-}
-
 @keyframes blink {
 	0% {
 		opacity: 1;
@@ -78,11 +54,11 @@
 }
 
 .img-fade-in {
-	animation:fade-in 1s linear;
+	transition: opacity 0.5s linear;
 }
 
 .img-fade-out {
-	animation:fade-out 1s linear;
+	transition: opacity 0.3s linear;
 }
 
 .span-blink {

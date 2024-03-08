@@ -11,45 +11,36 @@ const projects = [
 ];
 
 const Projects = () => {
-	const fadeIn = 'object-fill img-fade-in';
-	const fadeOut = 'object-fill img-fade-out';
 	const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-	const [classes, setClasses] = useState(fadeOut);
 
 	const handleMouseEnter = (index: number) => {
-		setHoveredProject((prevHoveredProject) =>
-			prevHoveredProject === index ? prevHoveredProject : index,
-		);
-		setClasses((prev) => (prev === fadeIn ? prev : fadeIn));
-	};
-
-	const handleMouseLeave = () => {
-		setClasses((prev) => (prev === fadeOut ? prev : fadeOut));
+		setHoveredProject(index);
 	};
 
 	const handleFocus = (index: number) => {
-		setHoveredProject((prevHoveredProject) =>
-			prevHoveredProject === index ? prevHoveredProject : index,
-		);
-		setClasses((prev) => (prev === fadeIn ? prev : fadeIn));
-	};
-
-	const handleBlur = () => {
-		setClasses((prev) => (prev === fadeOut ? prev : fadeOut));
+		setHoveredProject(index);
 	};
 
 	return (
-		<div className='flex items-center justify-between gap-8 max-w-[800px] min-h-[600px]'>
-			<div className='relative flex-1'>
-				<img
-					src={
-						hoveredProject !== null
-							? projects[hoveredProject].img
-							: projects[0].img
-					}
-					className={classes}
-					alt='project image'
-				/>
+		<div className='flex items-center justify-between gap-8 min-w-[800px] min-h-[600px]'>
+			<div className='relative flex-1 min-w-[350px]'>
+				{projects.map(
+					(project: { title: string; img: string }, index) => (
+						<img
+							key={index}
+							src={project.img}
+							className={`absolute top-[50%] translate-y-[-50%] ${
+								index === hoveredProject
+									? 'img-fade-in'
+									: 'img-fade-out'
+							}`}
+							style={{
+								opacity: index === hoveredProject ? 1 : 0,
+							}}
+							alt={`project image ${index}`}
+						/>
+					),
+				)}
 			</div>
 			<div className='flex-1'>
 				<h2 className='text-6xl font-extrabold'>Projects</h2>
@@ -60,9 +51,9 @@ const Projects = () => {
 								key={index}
 								{...project}
 								onMouseEnter={() => handleMouseEnter(index)}
-								onMouseLeave={handleMouseLeave}
+								
 								onFocus={() => handleFocus(index)}
-								onBlur={handleBlur}
+							
 							/>
 						),
 					)}
