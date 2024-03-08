@@ -13,8 +13,8 @@ const ProjectCard = ({ title, onMouseEnter, onFocus }: ProjectCard) => {
 			onMouseEnter={onMouseEnter}
 			onFocus={onFocus}
 		>
-			<span className='before:w-[30px] before:h-[30px] before:bg-secondary-100 before:rounded-full before:absolute before:left-0 before:opacity-0 before:group-hover:opacity-100 transition'></span>
-			<p className='group-hover:font-bold group-focus:font-bold group-hover:text-secondary-100 group-focus:text-secondary-100 group-hover:translate-x-10 group-focus:translate-x-10 transition'>
+			<span className='before:w-[30px] before:h-[30px] before:bg-light-100 before:rounded-full before:absolute before:left-0 before:opacity-0 before:group-hover:opacity-100 transition'></span>
+			<p className='group-hover:font-bold group-focus:font-bold group-hover:translate-x-10 group-focus:translate-x-10 transition'>
 				{title}
 			</p>
 		</li>

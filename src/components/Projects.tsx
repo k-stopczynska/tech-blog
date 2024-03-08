@@ -4,6 +4,7 @@ import ProjectCard from '@/UI/ProjectCard';
 import { projects } from '@/utils/utils';
 
 const Projects = () => {
+
 	const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
 	const handleMouseEnter = (index: number) => {
@@ -57,20 +58,20 @@ const Projects = () => {
 								<p>{project.content}</p>
 								<div className='flex flex-wrap items-center gap-2'>
 									{project.stack.map((stack) => (
-										<div className='py-1 px-2 text-sm bg-[#2B3E52] rounded '>
+										<div className='py-1 px-2 text-sm bg-[#2B3E52] rounded shadow-md '>
 											{stack}
 										</div>
 									))}
 								</div>
 								<div className='flex justify-between items-center '>
-									{Object.entries(project.links).map(
-										(link: any) => (
+									{project.links.map(
+										(link: { string: URL }) => (
 											<Link
-                                                href={link[1]}
-                                                target="_blank"
+												href={Object.values(link)[0]}
+												target='_blank'
 												className='shadow text-center rounded py-2 px-4'
 											>
-												{link[0]}
+												{Object.keys(link)}
 											</Link>
 										),
 									)}
