@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import ProjectElem from '@/UI/ProjectElem';
+import ProjectCard from '@/UI/ProjectCard';
 import { projects } from '@/utils/utils';
 
 const Projects = () => {
@@ -28,63 +29,11 @@ const Projects = () => {
 						},
 						index,
 					) => (
-						<div key={index} className='relative'>
-							<img
-								src={project.img}
-								className={`absolute bottom-0 rounded ${
-									index === hoveredProject
-										? 'img-fade-in'
-										: 'img-fade-out'
-								}`}
-								style={{
-									opacity: index === hoveredProject ? 1 : 0,
-								}}
-								alt={`project image ${index}`}
-							/>
-							<div
-								className={`absolute top-0 w-full min-h-[250px] mt-6 rounded border border-light-100 p-4 flex flex-col justify-between gap-4 ${
-									index === hoveredProject
-										? 'img-fade-in'
-										: 'img-fade-out'
-								}`}
-								style={{
-									translate:
-										index === hoveredProject
-											? 0
-											: '-5000px',
-									opacity: index === hoveredProject ? 1 : 0,
-								}}
-							>
-								<h3 className='text-2xl font-bold tracking-widest'>
-									{project.title}
-								</h3>
-								<p>{project.content}</p>
-								<div className='flex flex-wrap items-center gap-2'>
-									{project.stack.map((stack, stackIndex) => (
-										<div
-											key={stackIndex}
-											className='py-1 px-2 text-sm bg-[#2B3E52] rounded shadow-md '
-										>
-											{stack}
-										</div>
-									))}
-								</div>
-								<div className='flex justify-between items-center '>
-									{project.links.map(
-										(link: any, linkIndex: number) => (
-											<Link
-												key={linkIndex}
-												href={link.url}
-												target='_blank'
-												className='shadow text-center rounded py-2 px-4'
-											>
-												{link.label}
-											</Link>
-										),
-									)}
-								</div>
-							</div>
-						</div>
+						<ProjectCard
+							{...project}
+							index={index}
+							hoveredProject={hoveredProject}
+						/>
 					),
 				)}
 			</div>
