@@ -27,7 +27,7 @@ const Modal = () => {
 					<div className='bg-primary-100 m-auto p-8'>
 						<div className='flex flex-col items-center text-light-100'>
 							<Link href={pathname}>
-								<button className='shadow text-center bold text-4xl rounded py-3 px-6 absolute right-4 hover:text-light-100 transition-colors'>
+								<button className='shadow text-center bold text-4xl rounded py-3 px-6 absolute top-4 right-4 hover:text-light-100 transition-colors'>
 									X
 								</button>
 							</Link>
