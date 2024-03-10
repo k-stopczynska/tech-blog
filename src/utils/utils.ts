@@ -6,11 +6,12 @@ export const projects = [
 		stack: ['typescript', 'chart.js', 'csv-parser', 'mocha', 'chai'],
 		links: [
 			{
-				github: 'https://github.com/k-stopczynska/codegroove',
+				label: 'github',
+				url: 'https://github.com/k-stopczynska/codegroove',
 			},
 			{
-				marketplace:
-					'https://marketplace.visualstudio.com/items?itemName=codegroove.codegroove',
+				label: 'marketplace',
+				url: 'https://marketplace.visualstudio.com/items?itemName=codegroove.codegroove',
 			},
 		],
 	},
@@ -21,9 +22,13 @@ export const projects = [
 		stack: ['python', 'pygame', 'unittest'],
 		links: [
 			{
-				github: 'https://github.com/k-stopczynska/code_quest/tree/develop',
+				label: 'github',
+				url: 'https://github.com/k-stopczynska/code_quest/tree/develop',
 			},
-			{ gameplay: 'https://youtu.be/4kEUT_y03yU' },
+			{
+				label: 'gameplay',
+				url: 'https://youtu.be/4kEUT_y03yU',
+			},
 		],
 	},
 	{
@@ -43,9 +48,13 @@ export const projects = [
 		],
 		links: [
 			{
-				github: 'https://github.com/dareITgirls/invoice-app',
+				label: 'github',
+				url: 'https://github.com/dareITgirls/invoice-app',
 			},
-			{ demo: 'https://dev-invoice-app.surge.sh' },
+			{
+				label: 'demo',
+				url: 'https://dev-invoice-app.surge.sh',
+			},
 		],
 	},
 	{
@@ -54,7 +63,12 @@ export const projects = [
 		content:
 			'Automation bot for sourcing candidates based on skills, location, and role',
 		stack: ['python', 'selenium', 'webdriver', 'unittest'],
-		links: [{ github: 'https://github.com/k-stopczynska/rekru_bot' }],
+		links: [
+			{
+				label: 'github',
+				url: 'https://github.com/k-stopczynska/rekru_bot',
+			},
+		],
 	},
 	{
 		title: 'roulette',
@@ -64,16 +78,25 @@ export const projects = [
 			'typescript',
 			'react',
 			'mobx',
+			'websockets',
+			'node',
 			'css',
 			'babylon-react',
 			'react dnd',
 		],
 		links: [
 			{
-				github: 'https://github.com/k-stopczynska/roulette',
+				label: 'github',
+				url: 'https://github.com/k-stopczynska/roulette',
 			},
-			{ demo: 'https://magic-roulette.surge.sh/' },
-			{ gameplay: 'https://youtu.be/hcH6IhOLR1Y' },
+			{
+				label: 'demo',
+				url: 'https://magic-roulette.surge.sh/',
+			},
+			{
+				label: 'gameplay',
+				url: 'https://youtu.be/hcH6IhOLR1Y',
+			},
 		],
 	},
 	{
@@ -90,9 +113,10 @@ export const projects = [
 		],
 		links: [
 			{
-				github: 'https://github.com/k-stopczynska/tech-blog',
+				label: 'github',
+				url: 'https://github.com/k-stopczynska/tech-blog',
 			},
-			{ demo: 'https://ainspiring.netlify.app' },
+			{ label: 'demo', url: 'https://ainspiring.netlify.app' },
 		],
 	},
 ];

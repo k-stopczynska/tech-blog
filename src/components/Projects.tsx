@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import ProjectCard from '@/UI/ProjectCard';
+import ProjectElem from '@/UI/ProjectElem';
 import { projects } from '@/utils/utils';
 
 const Projects = () => {
-
 	const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
 	const handleMouseEnter = (index: number) => {
@@ -49,6 +48,10 @@ const Projects = () => {
 										: 'img-fade-out'
 								}`}
 								style={{
+									translate:
+										index === hoveredProject
+											? 0
+											: '-5000px',
 									opacity: index === hoveredProject ? 1 : 0,
 								}}
 							>
@@ -57,21 +60,25 @@ const Projects = () => {
 								</h3>
 								<p>{project.content}</p>
 								<div className='flex flex-wrap items-center gap-2'>
-									{project.stack.map((stack) => (
-										<div className='py-1 px-2 text-sm bg-[#2B3E52] rounded shadow-md '>
+									{project.stack.map((stack, stackIndex) => (
+										<div
+											key={stackIndex}
+											className='py-1 px-2 text-sm bg-[#2B3E52] rounded shadow-md '
+										>
 											{stack}
 										</div>
 									))}
 								</div>
 								<div className='flex justify-between items-center '>
 									{project.links.map(
-										(link: { string: URL }) => (
+										(link: any, linkIndex: number) => (
 											<Link
-												href={Object.values(link)[0]}
+												key={linkIndex}
+												href={link.url}
 												target='_blank'
 												className='shadow text-center rounded py-2 px-4'
 											>
-												{Object.keys(link)}
+												{link.label}
 											</Link>
 										),
 									)}
@@ -86,7 +93,7 @@ const Projects = () => {
 				<ul className='divide-y divide-light-100'>
 					{projects.map(
 						(project: { title: string; img: string }, index) => (
-							<ProjectCard
+							<ProjectElem
 								key={index}
 								{...project}
 								onMouseEnter={() => handleMouseEnter(index)}
