@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import StackElem from './StackElem';
+import ProjectLinkElem from './ProjectLinkElem';
 import { Project, ProjectLink } from '@/types';
 
 const ProjectCard = ({
@@ -35,19 +35,12 @@ const ProjectCard = ({
 			<p>{content}</p>
 			<ul className='flex flex-wrap items-center gap-2'>
 				{stack.map((stack: string, stackIndex: number) => (
-					<StackElem stack={stack} stackIndex={stackIndex} />
+					<StackElem stack={stack} key={stackIndex} />
 				))}
 			</ul>
 			<div className='flex justify-between items-center '>
 				{links.map((link: ProjectLink, linkIndex: number) => (
-					<Link
-						key={linkIndex}
-						href={link.url}
-						target='_blank'
-						className='shadow text-center rounded py-2 px-4'
-					>
-						{link.label}
-					</Link>
+					<ProjectLinkElem link={link} key={linkIndex} />
 				))}
 			</div>
 		</div>
