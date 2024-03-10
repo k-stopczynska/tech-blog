@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Project, ProjectLink } from '@/types';
 
 const ProjectCard = ({
 	img,
@@ -8,7 +9,7 @@ const ProjectCard = ({
 	links,
 	index,
 	hoveredProject,
-}: any) => (
+}: Project & { index: number; hoveredProject: number | null }) => (
 	<div key={index} className='relative'>
 		<img
 			src={img}
@@ -29,9 +30,7 @@ const ProjectCard = ({
 				opacity: index === hoveredProject ? 1 : 0,
 			}}
 		>
-			<h3 className='text-2xl font-bold tracking-widest'>
-				{title}
-			</h3>
+			<h3 className='text-2xl font-bold tracking-widest'>{title}</h3>
 			<p>{content}</p>
 			<div className='flex flex-wrap items-center gap-2'>
 				{stack.map((stack: string, stackIndex: number) => (
@@ -44,7 +43,7 @@ const ProjectCard = ({
 				))}
 			</div>
 			<div className='flex justify-between items-center '>
-				{links.map((link: any, linkIndex: number) => (
+				{links.map((link: ProjectLink, linkIndex: number) => (
 					<Link
 						key={linkIndex}
 						href={link.url}
