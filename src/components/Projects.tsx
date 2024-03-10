@@ -18,18 +18,14 @@ const Projects = () => {
 	return (
 		<div className='flex items-center justify-between gap-8 min-w-[800px] min-h-[600px]'>
 			<div className='relative flex-1 min-w-[350px]'>
-				{projects.map(
-					(
-						project: Project,
-						index,
-					) => (
-						<ProjectCard
-							{...project}
-							index={index}
-							hoveredProject={hoveredProject}
-						/>
-					),
-				)}
+				{projects.map((project: Project, index) => (
+					<ProjectCard
+						{...project}
+						key={index}
+						index={index}
+						hoveredProject={hoveredProject}
+					/>
+				))}
 			</div>
 			<div className='flex-1'>
 				<ProjectList
