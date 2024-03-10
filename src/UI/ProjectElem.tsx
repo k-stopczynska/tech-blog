@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { MouseEvent, FocusEvent } from 'react';
 
 interface ProjectElem {
 	title: string;
-	onMouseEnter: (event: any) => void;
-	onFocus: (event: any) => void;
+	onMouseEnter: (event: MouseEvent) => void;
+	onFocus: (event: FocusEvent) => void;
 }
 
 const ProjectElem = ({ title, onMouseEnter, onFocus }: ProjectElem) => {

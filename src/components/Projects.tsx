@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
-import ProjectElem from '@/UI/ProjectElem';
+import ProjectList from '@/UI/ProjectList';
 import ProjectCard from '@/UI/ProjectCard';
 import { projects } from '@/utils/utils';
+import { Project } from '@/types';
 
 const Projects = () => {
 	const [hoveredProject, setHoveredProject] = useState<number | null>(null);
@@ -20,13 +20,7 @@ const Projects = () => {
 			<div className='relative flex-1 min-w-[350px]'>
 				{projects.map(
 					(
-						project: {
-							title: string;
-							img: string;
-							content: string;
-							stack: string[];
-							links: any;
-						},
+						project: Project,
 						index,
 					) => (
 						<ProjectCard
@@ -38,19 +32,10 @@ const Projects = () => {
 				)}
 			</div>
 			<div className='flex-1'>
-				<h2 className='text-6xl font-extrabold'>Projects</h2>
-				<ul className='divide-y divide-light-100'>
-					{projects.map(
-						(project: { title: string; img: string }, index) => (
-							<ProjectElem
-								key={index}
-								{...project}
-								onMouseEnter={() => handleMouseEnter(index)}
-								onFocus={() => handleFocus(index)}
-							/>
-						),
-					)}
-				</ul>
+				<ProjectList
+					handleMouseEnter={handleMouseEnter}
+					handleFocus={handleFocus}
+				/>
 			</div>
 		</div>
 	);
