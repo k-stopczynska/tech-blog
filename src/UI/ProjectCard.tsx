@@ -26,7 +26,7 @@ const ProjectCard = ({
 				index === hoveredProject
 					? 'translate-x-0'
 					: 'translate-x-[-5000px]'
-			}, ${index === hoveredProject ? 'opacity-100' : 'opacity-0'}`}
+			} ${index === hoveredProject ? 'opacity-100' : 'opacity-0'}`}
 		>
 			<h3 className='text-2xl font-bold tracking-widest'>{title}</h3>
 			<p>{content}</p>

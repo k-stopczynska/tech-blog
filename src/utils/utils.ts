@@ -17,7 +17,7 @@ export const projects = [
 	},
 	{
 		title: 'code quest',
-		img: 'https://lh3.googleusercontent.com/pw/AP1GczMgWyxVNEGLPXbATt0boGF84hFDOq5wDz7fL-kXfT1O5odsKwK-bDhbJETP3v_iaDgNvUZX073H0bEYEphU9J88zcuYjbp7r8sYuFVUdadZMHk9UkM=w2400',
+		img: '/games.jpg',
 		content: 'Arcade catcher game for coding session breaks',
 		stack: ['python', 'pygame', 'unittest'],
 		links: [
