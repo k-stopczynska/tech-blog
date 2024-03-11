@@ -5,6 +5,7 @@ import Link from 'next/link';
 import CVComponent from '@/components/CVComponent';
 import TechStack from '@/components/TechStack';
 import Projects from '@/components/Projects';
+import PersonalMemo from '@/components/PersonalMemo';
 
 const Modal = () => {
 	const searchParams = useSearchParams();
@@ -17,8 +18,10 @@ const Modal = () => {
 			<CVComponent />
 		) : variant === 'tech' ? (
 			<TechStack />
-		) : (
+		) : variant === 'projects' ? (
 			<Projects />
+		) : (
+			<PersonalMemo />
 		);
 	return (
 		<>

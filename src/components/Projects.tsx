@@ -16,8 +16,8 @@ const Projects = () => {
 	};
 
 	return (
-		<div className='flex items-center justify-between gap-8 min-w-[800px] min-h-[600px]'>
-			<div className='relative flex-1 min-w-[350px]'>
+		<div className='flex  items-center justify-between gap-8 min-w-[800px] min-h-[600px]'>
+			<div className='relative flex-1 '>
 				{projects.map((project: Project, index) => (
 					<ProjectCard
 						{...project}

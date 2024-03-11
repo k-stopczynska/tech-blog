@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import MainScene from '@/components/MainScene';
 
 const AboutPage = () => {
 	return (
@@ -28,6 +27,13 @@ const AboutPage = () => {
 						<Link href={`?modal=true&variant=tech`}>
 							<button className='absolute top-0 bottom-0 left-0 right-0 text-center opacity-0 transition-opacity hover:opacity-100'>
 								see tech-stack
+							</button>
+						</Link>
+					</div>
+					<div className='relative w-[3.2%] h-[12%] top-[-13.5%] left-[51.5%] cursor-pointer transition-all shadow-custom hover:shadow-hover focus:shadow-hover'>
+						<Link href={`?modal=true&variant=personal`}>
+							<button className='absolute top-0 bottom-0 left-0 right-0 text-center opacity-0 transition-opacity hover:opacity-100'>
+								see personal memo
 							</button>
 						</Link>
 					</div>
