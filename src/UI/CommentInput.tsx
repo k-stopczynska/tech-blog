@@ -9,7 +9,7 @@ const CommentInput = ({ handleSubmit }: { handleSubmit: (e: FormEvent<HTMLFormEl
 	return (
 		<>
 			{status !== 'authenticated' && (
-				<p>Musisz być zalogowany, aby dodawać komentarze</p>
+				<p>You have to be logged in to leave a comment</p>
 			)}
 			{status === 'authenticated' && (
 				<form method='POST' onSubmit={handleSubmit} className='w-full'>
@@ -22,7 +22,7 @@ const CommentInput = ({ handleSubmit }: { handleSubmit: (e: FormEvent<HTMLFormEl
 					<Button
 						type='submit'
 						variant='simpleButton'
-						title='Wyślij'
+						title='Send'
 					/>
 				</form>
 			)}
