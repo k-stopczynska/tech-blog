@@ -27,7 +27,7 @@ const Comments = ({ postSlug }: { postSlug: string }) => {
 
 	return (
 		<section>
-			<h2 className='text-lg md:text-2xl font-bold mb-4'>Komentarze</h2>
+			<h2 className='text-lg md:text-2xl font-bold mb-4'>Comments</h2>
 			<CommentInput handleSubmit={handleSubmit} />
 			{/* <Suspense fallback={<Loading />}> */}
 			<div className='flex flex-col gap-4 mt-10'>
