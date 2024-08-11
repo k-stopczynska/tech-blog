@@ -45,15 +45,15 @@ const Projects = () => {
 			<>
 				<h2 className='text-6xl font-extrabold mt-12 mb-6'>Projects</h2>
 				<ul>
-					{projects.map((project: Project, index, hoveredProject) => (
+					{projects.map((project: Project, index) => (
 						<ProjectCard
 							{...project}
 							key={index}
+							index={index}
 							hoveredProject={hoveredProject}
 						/>
 					))}
 				</ul>
-				;
 			</>
 		);
 	}
