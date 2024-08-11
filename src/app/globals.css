@@ -53,6 +53,14 @@
 	}
 }
 
+.img-fade-in {
+	transition: opacity 0.5s linear;
+}
+
+.img-fade-out {
+	transition: opacity 0.3s linear;
+}
+
 .span-blink {
 	animation: blink 8s linear infinite;
 }

@@ -40,3 +40,16 @@ export type UpdatedSearchParamsType = {
 export type CardType = PostType & CardUpdateType;
 
 export type CommentType = Pick<CardType, 'user' | 'createdAt' | 'desc' | '_id'>;
+
+export type ProjectLink = {
+	url: string;
+	label: string;
+};
+
+export type Project = {
+	title: string;
+	img: string;
+	content: string;
+	stack: string[];
+	links: ProjectLink[];
+};
