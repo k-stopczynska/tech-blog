@@ -2,7 +2,7 @@ import React from 'react';
 
 const PersonalMemo = () => {
 	return (
-		<article>
+		<article className="">
 			<h2 className='text-6xl font-extrabold pt-12 pb-4'>
 				About the author
 			</h2>

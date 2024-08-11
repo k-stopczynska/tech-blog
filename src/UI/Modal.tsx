@@ -2,8 +2,6 @@
 import React from 'react';
 import { useSearchParams, usePathname } from 'next/navigation';
 import Link from 'next/link';
-import CVComponent from '@/components/CVComponent';
-import TechStack from '@/components/TechStack';
 import Projects from '@/components/Projects';
 import PersonalMemo from '@/components/PersonalMemo';
 
@@ -13,16 +11,8 @@ const Modal = () => {
 	const variant = searchParams.get('variant');
 	const pathname = usePathname();
 
-	let content =
-		variant === 'cv' ? (
-			<CVComponent />
-		) : variant === 'tech' ? (
-			<TechStack />
-		) : variant === 'projects' ? (
-			<Projects />
-		) : (
-			<PersonalMemo />
-		);
+	let content = variant === 'memo' ? <PersonalMemo /> : <Projects />;
+
 	return (
 		<>
 			{modal && (
