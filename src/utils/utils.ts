@@ -1,7 +1,7 @@
 export const projects = [
 	{
 		title: 'codegroove',
-		img: 'https://lh3.googleusercontent.com/pw/AP1GczN90IOQn6n-n-9k_r6i3qFnocLHIFQ4yJadJL-PtIDkjCnXqazk97fCbtA_8Xen5hDX6Itn4av-d1Yqqlrt2or0153LAIHJ9Jh7FhuYF6dmvoNzFAY=w2400',
+		img: 'https://lh3.googleusercontent.com/pw/AP1GczPmnyJXRkd-AzyGYLo7eAccDp3CCmJ1LH07kQ200lRkRQO4FXznrgZ7mQKKhHFwQ1Tx33C93n40LIHHBZVRbpVdyyv1TmJz2MVBz1bFjpmcbXBaHeY=w2400',
 		content: 'VSCode extension for tracking and analyzing coding time',
 		stack: ['typescript', 'chart.js', 'csv-parser', 'mocha', 'chai'],
 		links: [
@@ -17,7 +17,7 @@ export const projects = [
 	},
 	{
 		title: 'code quest',
-		img: '/games.jpg',
+		img: 'https://lh3.googleusercontent.com/pw/AP1GczOn7ivwbRm5LcXPv26a9bF0-3rIgg_A4_EbYT7cO0iA1KIsViIT9tV-MKju0-2DkE1lI2dEZI69mMc8n-J6Rmkr4G80xTHILvlwX3DDQizIwv6aoKk=w2400',
 		content: 'Arcade catcher game for coding session breaks',
 		stack: ['python', 'pygame', 'unittest'],
 		links: [
@@ -72,7 +72,7 @@ export const projects = [
 	},
 	{
 		title: 'roulette',
-		img: '/games.jpg',
+		img: 'https://lh3.googleusercontent.com/pw/AP1GczPCgW-6up2DlWI6r9tOUyacaGLkLx7OQ_UNG9GpDb_dnlEzXIVniyAeWrlv7s9C82GtnXdWXpYCSzmJY1TKXBxrwbNwpNHJ2H26kWSjbfosDMeHFkk=w2400',
 		content: '3D multiplayer roulette game for desktops',
 		stack: [
 			'typescript',
